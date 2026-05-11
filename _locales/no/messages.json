@@ -1,0 +1,176 @@
+{
+   "AllOptionTitle": {
+      "message": "Last ned alle innlegg fra siden"
+   },
+   "DownloadedCounterTitle1": {
+      "message": "Lastet ned"
+   },
+   "DownloadedCounterTitle2": {
+      "message": "elementer"
+   },
+   "additionalInfoErr": {
+      "message": "Oppdater siden og prøv på nytt"
+   },
+   "amountTitle": {
+      "message": "Last ned etter rekkefølge"
+   },
+   "carouselNotFond": {
+      "message": "Beklager, karusell-innlegg kunne ikke finnes"
+   },
+   "dateTitle": {
+      "message": "Last ned etter tidsperiode"
+   },
+   "defaultBaseFileName": {
+      "message": "UltiDownloader"
+   },
+   "delimLineText": {
+      "message": "eller"
+   },
+   "description": {
+      "message": "Last ned Instagram‑historier, reels, videoer og bilder — én etter én eller flere på en gang — direkte fra instagram.com med Instagram Downloader"
+   },
+   "dialogCancel": {
+      "message": "Avbryt"
+   },
+   "dialogClose": {
+      "message": "Lukk"
+   },
+   "dialogOk": {
+      "message": "OK"
+   },
+   "dialogStopSave": {
+      "message": "Stopp & Lagre"
+   },
+   "dialogTitleDefault": {
+      "message": "Forbereder"
+   },
+   "dialogTitleDw": {
+      "message": "Laster ned"
+   },
+   "dialogTitleZip": {
+      "message": "Forbereder .zip fil"
+   },
+   "disabledOptionToolTip": {
+      "message": "Stopp nedlasting og lagre allerede nedlastede innlegg"
+   },
+   "downloadAllBtn": {
+      "message": "Last ned alt"
+   },
+   "downloadBtn": {
+      "message": "Last ned"
+   },
+   "downloadDoneSuccess": {
+      "message": "Nedlasting fullført"
+   },
+   "downloadReqErr": {
+      "message": "Nedlasting mislyktes, sjekk internettforbindelsen din"
+   },
+   "dwErr": {
+      "message": "Nedlastingsfeil. Vennligst last inn siden på nytt og prøv igjen."
+   },
+   "explorerNoPostsErr": {
+      "message": "Ingen tilfeldige innlegg i utforskeren"
+   },
+   "fromLbl": {
+      "message": "fra"
+   },
+   "mainBtnNewText": {
+      "message": "Ulti Downloader"
+   },
+   "name": {
+      "message": "Instagram Downloader"
+   },
+   "noPostsErr": {
+      "message": "Ingen innlegg funnet på siden, vennligst last siden på nytt og prøv igjen"
+   },
+   "noPostsForCheckboxErr": {
+      "message": "Ingen innlegg funnet"
+   },
+   "noPostsFromDate": {
+      "message": "Ingen innlegg for de valgte datoene"
+   },
+   "noUserInfo": {
+      "message": "Ingen brukerinformasjon funnet"
+   },
+   "noWatchedReels": {
+      "message": "Ingen reels sett"
+   },
+   "notAllDwErr": {
+      "message": "Noen filer ble ikke lastet ned"
+   },
+   "notPostsToDw": {
+      "message": "Ingen innlegg å laste ned"
+   },
+   "notSupportPage": {
+      "message": "Beklager, men denne siden støtter ikke masse-nedlastning"
+   },
+   "optionsPromoAdsLabel": {
+      "message": "Show promotional ads"
+   },
+   "optionsSaveBtn": {
+      "message": "Save"
+   },
+   "policyAcceptBtn": {
+      "message": "Accept"
+   },
+   "policyAcceptPromptAfter": {
+      "message": "to continue using the extension"
+   },
+   "policyAcceptPromptBefore": {
+      "message": "Please Accept our"
+   },
+   "policyAcceptPromptLinkText": {
+      "message": "Privacy Policy"
+   },
+   "policyUpdateTitle": {
+      "message": "Privacy Policy Update"
+   },
+   "rateUsDescr": {
+      "message": "Legg igjen en tilbakemelding"
+   },
+   "reelsInfoErr": {
+      "message": "Ingen informasjon om alle viste reels funnet. Vennligst last siden på nytt."
+   },
+   "shortBaseFileName": {
+      "message": "UD"
+   },
+   "smthErr": {
+      "message": "Noe gikk galt, last siden på nytt og prøv igjen"
+   },
+   "smthWentWrong": {
+      "message": "Noe gikk galt"
+   },
+   "storiesDwDescription": {
+      "message": "Last ned alle åpne Stories"
+   },
+   "title": {
+      "message": ""
+   },
+   "toLbl": {
+      "message": "til"
+   },
+   "userReelsNoPostsErr": {
+      "message": "Ingen reels funnet"
+   },
+   "userSavedNoPostsErr": {
+      "message": "Ingen lagrede innlegg"
+   },
+   "userTagNoPostsErr": {
+      "message": "Ingen merket innlegg fra brukeren"
+   },
+   "userWithStoriesErr": {
+      "message": "Ingen brukerinformasjon funnet"
+   },
+   "viewedReelsDescription": {
+      "message": "Masse-nedlasting er kun tilgjengelig for reels som er merket som vist"
+   },
+   "viewedReelsTitle": {
+      "message": "Last ned viste reels"
+   },
+   "waitDownloadingEnd": {
+      "message": "Vennligst vent til nedlasting i en annen fane er ferdig"
+   },
+   "wrongPageType": {
+      "message": "Feil type side"
+   }
+}

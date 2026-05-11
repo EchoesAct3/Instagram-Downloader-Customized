@@ -1,0 +1,176 @@
+{
+   "AllOptionTitle": {
+      "message": "Unduh semua postingan dari halaman"
+   },
+   "DownloadedCounterTitle1": {
+      "message": "Diunduh"
+   },
+   "DownloadedCounterTitle2": {
+      "message": "item"
+   },
+   "additionalInfoErr": {
+      "message": "Silakan segarkan halaman dan coba lagi"
+   },
+   "amountTitle": {
+      "message": "Unduh berdasarkan urutan"
+   },
+   "carouselNotFond": {
+      "message": "Maaf, postingan karusel tidak ditemukan"
+   },
+   "dateTitle": {
+      "message": "Unduh berdasarkan rentang waktu"
+   },
+   "defaultBaseFileName": {
+      "message": "UltiDownloader"
+   },
+   "delimLineText": {
+      "message": "atau"
+   },
+   "description": {
+      "message": "Unduh story, reels, video, dan foto dari Instagram — satu per satu atau dalam jumlah banyak — langsung dari instagram.com dengan Instagram Downloader"
+   },
+   "dialogCancel": {
+      "message": "Batal"
+   },
+   "dialogClose": {
+      "message": "Tutup"
+   },
+   "dialogOk": {
+      "message": "OK"
+   },
+   "dialogStopSave": {
+      "message": "Hentikan & Simpan"
+   },
+   "dialogTitleDefault": {
+      "message": "Menyiapkan"
+   },
+   "dialogTitleDw": {
+      "message": "Mengunduh"
+   },
+   "dialogTitleZip": {
+      "message": "Menyiapkan file .zip"
+   },
+   "disabledOptionToolTip": {
+      "message": "Hentikan pengunduhan dan simpan postingan yang sudah diunduh"
+   },
+   "downloadAllBtn": {
+      "message": "Unduh semua"
+   },
+   "downloadBtn": {
+      "message": "Unduh"
+   },
+   "downloadDoneSuccess": {
+      "message": "Unduhan berhasil diselesaikan"
+   },
+   "downloadReqErr": {
+      "message": "Gagal mengunduh, periksa koneksi internet Anda"
+   },
+   "dwErr": {
+      "message": "Kesalahan pengunduhan. Silakan muat ulang halaman dan coba lagi."
+   },
+   "explorerNoPostsErr": {
+      "message": "Tidak ada postingan acak di penjelajah"
+   },
+   "fromLbl": {
+      "message": "dari"
+   },
+   "mainBtnNewText": {
+      "message": "Ulti Downloader"
+   },
+   "name": {
+      "message": "Instagram Downloader"
+   },
+   "noPostsErr": {
+      "message": "Tidak ada postingan di halaman, silakan muat ulang dan coba lagi"
+   },
+   "noPostsForCheckboxErr": {
+      "message": "Tidak ada postingan yang ditemukan"
+   },
+   "noPostsFromDate": {
+      "message": "Tidak ada postingan untuk tanggal yang dipilih"
+   },
+   "noUserInfo": {
+      "message": "Informasi pengguna tidak ditemukan"
+   },
+   "noWatchedReels": {
+      "message": "Tidak ada Reels yang dilihat"
+   },
+   "notAllDwErr": {
+      "message": "Beberapa file tidak berhasil diunduh"
+   },
+   "notPostsToDw": {
+      "message": "Tidak ada postingan untuk diunduh"
+   },
+   "notSupportPage": {
+      "message": "Maaf, halaman ini tidak mendukung unduhan massal"
+   },
+   "optionsPromoAdsLabel": {
+      "message": "Show promotional ads"
+   },
+   "optionsSaveBtn": {
+      "message": "Save"
+   },
+   "policyAcceptBtn": {
+      "message": "Accept"
+   },
+   "policyAcceptPromptAfter": {
+      "message": "to continue using the extension"
+   },
+   "policyAcceptPromptBefore": {
+      "message": "Please Accept our"
+   },
+   "policyAcceptPromptLinkText": {
+      "message": "Privacy Policy"
+   },
+   "policyUpdateTitle": {
+      "message": "Privacy Policy Update"
+   },
+   "rateUsDescr": {
+      "message": "Tinggalkan ulasan Anda"
+   },
+   "reelsInfoErr": {
+      "message": "Tidak ditemukan informasi tentang semua Reels yang dilihat. Silakan muat ulang halaman dan coba lagi."
+   },
+   "shortBaseFileName": {
+      "message": "UD"
+   },
+   "smthErr": {
+      "message": "Terjadi kesalahan, silakan muat ulang halaman dan coba lagi"
+   },
+   "smthWentWrong": {
+      "message": "Terjadi kesalahan"
+   },
+   "storiesDwDescription": {
+      "message": "Unduh semua Story yang sedang dibuka"
+   },
+   "title": {
+      "message": ""
+   },
+   "toLbl": {
+      "message": "hingga"
+   },
+   "userReelsNoPostsErr": {
+      "message": "Reels tidak ditemukan"
+   },
+   "userSavedNoPostsErr": {
+      "message": "Tidak ada postingan yang disimpan"
+   },
+   "userTagNoPostsErr": {
+      "message": "Tidak ada postingan yang ditandai dari pengguna"
+   },
+   "userWithStoriesErr": {
+      "message": "Informasi pengguna tidak ditemukan"
+   },
+   "viewedReelsDescription": {
+      "message": "Unduhan massal hanya tersedia untuk Reels yang telah dilihat"
+   },
+   "viewedReelsTitle": {
+      "message": "Unduh Reels yang sudah dilihat"
+   },
+   "waitDownloadingEnd": {
+      "message": "Tunggu hingga unduhan dari tab lain selesai"
+   },
+   "wrongPageType": {
+      "message": "Halaman salah"
+   }
+}

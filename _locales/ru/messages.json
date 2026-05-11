@@ -1,0 +1,176 @@
+{
+   "AllOptionTitle": {
+      "message": "Скачать все посты со страницы"
+   },
+   "DownloadedCounterTitle1": {
+      "message": "Скачано"
+   },
+   "DownloadedCounterTitle2": {
+      "message": "файлов"
+   },
+   "additionalInfoErr": {
+      "message": "Пожалуйста, обновите страницу и попробуйте снова"
+   },
+   "amountTitle": {
+      "message": "Скачивание по порядку"
+   },
+   "carouselNotFond": {
+      "message": "Карусельный пост не найден"
+   },
+   "dateTitle": {
+      "message": "Скачивание по дате"
+   },
+   "defaultBaseFileName": {
+      "message": "UltiDownloader"
+   },
+   "delimLineText": {
+      "message": "или"
+   },
+   "description": {
+      "message": "Скачивайте истории, Reels, видео и фото из Instagram — по одному или сразу пакетом — прямо с instagram.com с помощью Instagram Downloader"
+   },
+   "dialogCancel": {
+      "message": "Отмена"
+   },
+   "dialogClose": {
+      "message": "Закрыть"
+   },
+   "dialogOk": {
+      "message": "ОК"
+   },
+   "dialogStopSave": {
+      "message": "Остановить и сохранить"
+   },
+   "dialogTitleDefault": {
+      "message": "Подготовка"
+   },
+   "dialogTitleDw": {
+      "message": "Скачивание"
+   },
+   "dialogTitleZip": {
+      "message": "Создание архива .zip"
+   },
+   "disabledOptionToolTip": {
+      "message": "Остановить загрузку и сохранить уже загруженные посты"
+   },
+   "downloadAllBtn": {
+      "message": "Скачать всё"
+   },
+   "downloadBtn": {
+      "message": "Скачать"
+   },
+   "downloadDoneSuccess": {
+      "message": "Скачивание завершено успешно"
+   },
+   "downloadReqErr": {
+      "message": "Ошибка скачивания. Проверьте подключение к интернету"
+   },
+   "dwErr": {
+      "message": "Ошибка скачивания. Перезагрузите страницу и попробуйте снова."
+   },
+   "explorerNoPostsErr": {
+      "message": "На вкладке «Обзор» нет постов"
+   },
+   "fromLbl": {
+      "message": "от"
+   },
+   "mainBtnNewText": {
+      "message": "Ulti Downloader"
+   },
+   "name": {
+      "message": "Instagram Downloader"
+   },
+   "noPostsErr": {
+      "message": "Посты не найдены, перезагрузите страницу и попробуйте снова"
+   },
+   "noPostsForCheckboxErr": {
+      "message": "Посты не найдены"
+   },
+   "noPostsFromDate": {
+      "message": "Нет постов за выбранные даты"
+   },
+   "noUserInfo": {
+      "message": "Нет информации о пользователе"
+   },
+   "noWatchedReels": {
+      "message": "Просмотренных Reels нет"
+   },
+   "notAllDwErr": {
+      "message": "Некоторые файлы не были загружены"
+   },
+   "notPostsToDw": {
+      "message": "Нет постов для скачивания"
+   },
+   "notSupportPage": {
+      "message": "К сожалению, эта страница не поддерживает массовую загрузку"
+   },
+   "optionsPromoAdsLabel": {
+      "message": "Show promotional ads"
+   },
+   "optionsSaveBtn": {
+      "message": "Save"
+   },
+   "policyAcceptBtn": {
+      "message": "Accept"
+   },
+   "policyAcceptPromptAfter": {
+      "message": "to continue using the extension"
+   },
+   "policyAcceptPromptBefore": {
+      "message": "Please Accept our"
+   },
+   "policyAcceptPromptLinkText": {
+      "message": "Privacy Policy"
+   },
+   "policyUpdateTitle": {
+      "message": "Privacy Policy Update"
+   },
+   "rateUsDescr": {
+      "message": "Оставьте отзыв"
+   },
+   "reelsInfoErr": {
+      "message": "Информация о просмотренных Reels не найдена. Перезагрузите страницу и попробуйте снова."
+   },
+   "shortBaseFileName": {
+      "message": "UD"
+   },
+   "smthErr": {
+      "message": "Что-то пошло не так. Обновите страницу и попробуйте снова"
+   },
+   "smthWentWrong": {
+      "message": "Что-то пошло не так"
+   },
+   "storiesDwDescription": {
+      "message": "Скачать все открытые истории"
+   },
+   "title": {
+      "message": ""
+   },
+   "toLbl": {
+      "message": "до"
+   },
+   "userReelsNoPostsErr": {
+      "message": "Reels не найдены"
+   },
+   "userSavedNoPostsErr": {
+      "message": "Нет сохранённых постов"
+   },
+   "userTagNoPostsErr": {
+      "message": "Нет отмеченных постов у пользователя"
+   },
+   "userWithStoriesErr": {
+      "message": "Не удалось получить информацию о пользователе"
+   },
+   "viewedReelsDescription": {
+      "message": "Массовая загрузка доступна только для просмотренных Reels"
+   },
+   "viewedReelsTitle": {
+      "message": "Скачать просмотренные Reels"
+   },
+   "waitDownloadingEnd": {
+      "message": "Пожалуйста, дождитесь окончания загрузки в другой вкладке"
+   },
+   "wrongPageType": {
+      "message": "Неподдерживаемая страница"
+   }
+}

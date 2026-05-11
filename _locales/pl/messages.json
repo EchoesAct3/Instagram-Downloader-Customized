@@ -1,0 +1,176 @@
+{
+   "AllOptionTitle": {
+      "message": "Pobierz wszystkie posty ze strony"
+   },
+   "DownloadedCounterTitle1": {
+      "message": "Pobrano"
+   },
+   "DownloadedCounterTitle2": {
+      "message": "elementów"
+   },
+   "additionalInfoErr": {
+      "message": "Odśwież stronę i spróbuj ponownie"
+   },
+   "amountTitle": {
+      "message": "Pobierz według kolejności"
+   },
+   "carouselNotFond": {
+      "message": "Nie można znaleźć posta typu karuzela"
+   },
+   "dateTitle": {
+      "message": "Pobierz według przedziału czasu"
+   },
+   "defaultBaseFileName": {
+      "message": "UltiDownloader"
+   },
+   "delimLineText": {
+      "message": "lub"
+   },
+   "description": {
+      "message": "Pobieraj relacje, reels, wideo i zdjęcia z Instagrama — pojedynczo lub zbiorczo — prosto z instagram.com z Instagram Downloader"
+   },
+   "dialogCancel": {
+      "message": "Anuluj"
+   },
+   "dialogClose": {
+      "message": "Zamknij"
+   },
+   "dialogOk": {
+      "message": "OK"
+   },
+   "dialogStopSave": {
+      "message": "Zatrzymaj i zapisz"
+   },
+   "dialogTitleDefault": {
+      "message": "Przygotowywanie"
+   },
+   "dialogTitleDw": {
+      "message": "Pobieranie"
+   },
+   "dialogTitleZip": {
+      "message": "Przygotowywanie pliku .zip"
+   },
+   "disabledOptionToolTip": {
+      "message": "Zatrzymaj pobieranie i zapisz już pobrane posty"
+   },
+   "downloadAllBtn": {
+      "message": "Pobierz wszystko"
+   },
+   "downloadBtn": {
+      "message": "Pobierz"
+   },
+   "downloadDoneSuccess": {
+      "message": "Pobieranie zakończone pomyślnie"
+   },
+   "downloadReqErr": {
+      "message": "Pobieranie nie powiodło się, sprawdź połączenie z internetem"
+   },
+   "dwErr": {
+      "message": "Błąd pobierania. Proszę odśwież stronę i spróbuj ponownie."
+   },
+   "explorerNoPostsErr": {
+      "message": "Brak losowych postów w eksploratorze"
+   },
+   "fromLbl": {
+      "message": "od"
+   },
+   "mainBtnNewText": {
+      "message": "Ulti Downloader"
+   },
+   "name": {
+      "message": "Instagram Downloader"
+   },
+   "noPostsErr": {
+      "message": "Brak postów na stronie, odśwież stronę i spróbuj ponownie"
+   },
+   "noPostsForCheckboxErr": {
+      "message": "Nie znaleziono postów"
+   },
+   "noPostsFromDate": {
+      "message": "Brak postów dla wybranych dat"
+   },
+   "noUserInfo": {
+      "message": "Brak informacji o użytkowniku"
+   },
+   "noWatchedReels": {
+      "message": "Brak obejrzanych Reels"
+   },
+   "notAllDwErr": {
+      "message": "Nie wszystkie pliki zostały pobrane"
+   },
+   "notPostsToDw": {
+      "message": "Brak postów do pobrania"
+   },
+   "notSupportPage": {
+      "message": "Ta strona nie obsługuje pobierania masowego"
+   },
+   "optionsPromoAdsLabel": {
+      "message": "Show promotional ads"
+   },
+   "optionsSaveBtn": {
+      "message": "Save"
+   },
+   "policyAcceptBtn": {
+      "message": "Accept"
+   },
+   "policyAcceptPromptAfter": {
+      "message": "to continue using the extension"
+   },
+   "policyAcceptPromptBefore": {
+      "message": "Please Accept our"
+   },
+   "policyAcceptPromptLinkText": {
+      "message": "Privacy Policy"
+   },
+   "policyUpdateTitle": {
+      "message": "Privacy Policy Update"
+   },
+   "rateUsDescr": {
+      "message": "Zostaw swoją opinię"
+   },
+   "reelsInfoErr": {
+      "message": "Nie znaleziono informacji o wszystkich obejrzanych Reels. Odśwież stronę i spróbuj ponownie."
+   },
+   "shortBaseFileName": {
+      "message": "UD"
+   },
+   "smthErr": {
+      "message": "Coś poszło nie tak, odśwież stronę i spróbuj ponownie"
+   },
+   "smthWentWrong": {
+      "message": "Coś poszło nie tak"
+   },
+   "storiesDwDescription": {
+      "message": "Pobierz wszystkie aktualnie otwarte Stories"
+   },
+   "title": {
+      "message": ""
+   },
+   "toLbl": {
+      "message": "do"
+   },
+   "userReelsNoPostsErr": {
+      "message": "Nie znaleziono Reels"
+   },
+   "userSavedNoPostsErr": {
+      "message": "Brak zapisanych postów"
+   },
+   "userTagNoPostsErr": {
+      "message": "Brak postów oznaczonych przez użytkownika"
+   },
+   "userWithStoriesErr": {
+      "message": "Nie znaleziono informacji o użytkowniku"
+   },
+   "viewedReelsDescription": {
+      "message": "Pobieranie masowe dostępne tylko dla reels oznaczonych jako obejrzane"
+   },
+   "viewedReelsTitle": {
+      "message": "Pobierz obejrzane reels"
+   },
+   "waitDownloadingEnd": {
+      "message": "Proszę czekać, aż pobieranie z innej karty się zakończy"
+   },
+   "wrongPageType": {
+      "message": "Nieprawidłowa strona"
+   }
+}

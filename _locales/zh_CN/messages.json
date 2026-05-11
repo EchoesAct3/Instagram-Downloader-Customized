@@ -1,0 +1,176 @@
+{
+   "AllOptionTitle": {
+      "message": "下载页面上的所有帖子"
+   },
+   "DownloadedCounterTitle1": {
+      "message": "已下载"
+   },
+   "DownloadedCounterTitle2": {
+      "message": "项"
+   },
+   "additionalInfoErr": {
+      "message": "请刷新页面并重试"
+   },
+   "amountTitle": {
+      "message": "按顺序下载"
+   },
+   "carouselNotFond": {
+      "message": "抱歉，找不到轮播帖子"
+   },
+   "dateTitle": {
+      "message": "按时间范围下载"
+   },
+   "defaultBaseFileName": {
+      "message": "UltiDownloader"
+   },
+   "delimLineText": {
+      "message": "或"
+   },
+   "description": {
+      "message": "从 instagram.com 下载 Instagram 故事、Reels、视频和照片 — 单个或批量 — 使用 Instagram Downloader"
+   },
+   "dialogCancel": {
+      "message": "取消"
+   },
+   "dialogClose": {
+      "message": "关闭"
+   },
+   "dialogOk": {
+      "message": "确定"
+   },
+   "dialogStopSave": {
+      "message": "停止并保存"
+   },
+   "dialogTitleDefault": {
+      "message": "正在准备"
+   },
+   "dialogTitleDw": {
+      "message": "正在下载"
+   },
+   "dialogTitleZip": {
+      "message": "正在准备 .zip 文件"
+   },
+   "disabledOptionToolTip": {
+      "message": "停止下载并保存已下载的帖子"
+   },
+   "downloadAllBtn": {
+      "message": "全部下载"
+   },
+   "downloadBtn": {
+      "message": "下载"
+   },
+   "downloadDoneSuccess": {
+      "message": "下载成功完成"
+   },
+   "downloadReqErr": {
+      "message": "下载失败，请检查网络连接"
+   },
+   "dwErr": {
+      "message": "下载出错，请重载页面并重试。"
+   },
+   "explorerNoPostsErr": {
+      "message": "探索栏中没有随机帖子"
+   },
+   "fromLbl": {
+      "message": "从"
+   },
+   "mainBtnNewText": {
+      "message": "Ulti Downloader"
+   },
+   "name": {
+      "message": "Instagram Downloader"
+   },
+   "noPostsErr": {
+      "message": "页面上未找到帖子，请重载页面并重试"
+   },
+   "noPostsForCheckboxErr": {
+      "message": "未找到帖子"
+   },
+   "noPostsFromDate": {
+      "message": "所选日期无帖子"
+   },
+   "noUserInfo": {
+      "message": "没有用户信息"
+   },
+   "noWatchedReels": {
+      "message": "没有已观看的 Reels"
+   },
+   "notAllDwErr": {
+      "message": "有些文件未能下载"
+   },
+   "notPostsToDw": {
+      "message": "没有帖子可下载"
+   },
+   "notSupportPage": {
+      "message": "抱歉，此页面不支持批量下载"
+   },
+   "optionsPromoAdsLabel": {
+      "message": "Show promotional ads"
+   },
+   "optionsSaveBtn": {
+      "message": "Save"
+   },
+   "policyAcceptBtn": {
+      "message": "Accept"
+   },
+   "policyAcceptPromptAfter": {
+      "message": "to continue using the extension"
+   },
+   "policyAcceptPromptBefore": {
+      "message": "Please Accept our"
+   },
+   "policyAcceptPromptLinkText": {
+      "message": "Privacy Policy"
+   },
+   "policyUpdateTitle": {
+      "message": "Privacy Policy Update"
+   },
+   "rateUsDescr": {
+      "message": "留下你的反馈"
+   },
+   "reelsInfoErr": {
+      "message": "未找到所有已观看 Reels 的信息。请重载页面并重试。"
+   },
+   "shortBaseFileName": {
+      "message": "UD"
+   },
+   "smthErr": {
+      "message": "出了点问题，请重载页面并重试"
+   },
+   "smthWentWrong": {
+      "message": "出了点问题"
+   },
+   "storiesDwDescription": {
+      "message": "下载当前打开的所有 Stories"
+   },
+   "title": {
+      "message": ""
+   },
+   "toLbl": {
+      "message": "至"
+   },
+   "userReelsNoPostsErr": {
+      "message": "未找到 Reels"
+   },
+   "userSavedNoPostsErr": {
+      "message": "没有保存的帖子"
+   },
+   "userTagNoPostsErr": {
+      "message": "用户没有被标记的帖子"
+   },
+   "userWithStoriesErr": {
+      "message": "未找到用户信息"
+   },
+   "viewedReelsDescription": {
+      "message": "仅已观看的 Reels 支持批量下载"
+   },
+   "viewedReelsTitle": {
+      "message": "下载已观看的 Reels"
+   },
+   "waitDownloadingEnd": {
+      "message": "请等待其他标签页的下载完成"
+   },
+   "wrongPageType": {
+      "message": "页面类型错误"
+   }
+}

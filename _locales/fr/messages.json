@@ -1,0 +1,176 @@
+{
+   "AllOptionTitle": {
+      "message": "Télécharger tous les posts de la page"
+   },
+   "DownloadedCounterTitle1": {
+      "message": "Téléchargés"
+   },
+   "DownloadedCounterTitle2": {
+      "message": "éléments"
+   },
+   "additionalInfoErr": {
+      "message": "Veuillez actualiser la page et réessayer"
+   },
+   "amountTitle": {
+      "message": "Télécharger par séquence"
+   },
+   "carouselNotFond": {
+      "message": "Désolé, post carrousel introuvable"
+   },
+   "dateTitle": {
+      "message": "Télécharger par période"
+   },
+   "defaultBaseFileName": {
+      "message": "UltiDownloader"
+   },
+   "delimLineText": {
+      "message": "ou"
+   },
+   "description": {
+      "message": "Téléchargez stories, reels, vidéos et photos Instagram — individuellement ou en masse — directement depuis instagram.com avec Instagram Downloader"
+   },
+   "dialogCancel": {
+      "message": "Annuler"
+   },
+   "dialogClose": {
+      "message": "Fermer"
+   },
+   "dialogOk": {
+      "message": "OK"
+   },
+   "dialogStopSave": {
+      "message": "Arrêter & Enregistrer"
+   },
+   "dialogTitleDefault": {
+      "message": "Préparation"
+   },
+   "dialogTitleDw": {
+      "message": "Téléchargement en cours"
+   },
+   "dialogTitleZip": {
+      "message": "Préparation du fichier .zip"
+   },
+   "disabledOptionToolTip": {
+      "message": "Arrêter le téléchargement et enregistrer les posts déjà téléchargés"
+   },
+   "downloadAllBtn": {
+      "message": "Tout télécharger"
+   },
+   "downloadBtn": {
+      "message": "Télécharger"
+   },
+   "downloadDoneSuccess": {
+      "message": "Téléchargement terminé avec succès"
+   },
+   "downloadReqErr": {
+      "message": "Échec du téléchargement, vérifiez votre connexion Internet"
+   },
+   "dwErr": {
+      "message": "Erreur de téléchargement. Rechargez la page et réessayez."
+   },
+   "explorerNoPostsErr": {
+      "message": "Aucun post aléatoire dans l’explorateur"
+   },
+   "fromLbl": {
+      "message": "de"
+   },
+   "mainBtnNewText": {
+      "message": "Ulti Downloader"
+   },
+   "name": {
+      "message": "Instagram Downloader"
+   },
+   "noPostsErr": {
+      "message": "Aucun post trouvé sur la page, veuillez recharger et réessayer"
+   },
+   "noPostsForCheckboxErr": {
+      "message": "Aucun post trouvé"
+   },
+   "noPostsFromDate": {
+      "message": "Aucun post pour les dates sélectionnées"
+   },
+   "noUserInfo": {
+      "message": "Aucune information sur l'utilisateur trouvée"
+   },
+   "noWatchedReels": {
+      "message": "Aucun Reel visionné"
+   },
+   "notAllDwErr": {
+      "message": "Certains fichiers n'ont pas été téléchargés"
+   },
+   "notPostsToDw": {
+      "message": "Aucun post à télécharger"
+   },
+   "notSupportPage": {
+      "message": "Cette page ne prend pas en charge le téléchargement en masse"
+   },
+   "optionsPromoAdsLabel": {
+      "message": "Show promotional ads"
+   },
+   "optionsSaveBtn": {
+      "message": "Save"
+   },
+   "policyAcceptBtn": {
+      "message": "Accept"
+   },
+   "policyAcceptPromptAfter": {
+      "message": "to continue using the extension"
+   },
+   "policyAcceptPromptBefore": {
+      "message": "Please Accept our"
+   },
+   "policyAcceptPromptLinkText": {
+      "message": "Privacy Policy"
+   },
+   "policyUpdateTitle": {
+      "message": "Privacy Policy Update"
+   },
+   "rateUsDescr": {
+      "message": "Laissez votre avis"
+   },
+   "reelsInfoErr": {
+      "message": "Aucune information trouvée sur les reels vus. Veuillez recharger la page."
+   },
+   "shortBaseFileName": {
+      "message": "UD"
+   },
+   "smthErr": {
+      "message": "Une erreur est survenue, veuillez recharger la page"
+   },
+   "smthWentWrong": {
+      "message": "Une erreur est survenue"
+   },
+   "storiesDwDescription": {
+      "message": "Télécharger toutes les stories actuellement ouvertes"
+   },
+   "title": {
+      "message": ""
+   },
+   "toLbl": {
+      "message": "à"
+   },
+   "userReelsNoPostsErr": {
+      "message": "Aucun Reel trouvé"
+   },
+   "userSavedNoPostsErr": {
+      "message": "Aucun post enregistré"
+   },
+   "userTagNoPostsErr": {
+      "message": "Aucun post tagué par l'utilisateur"
+   },
+   "userWithStoriesErr": {
+      "message": "Aucune information sur l'utilisateur trouvée"
+   },
+   "viewedReelsDescription": {
+      "message": "Le téléchargement en masse est disponible uniquement pour les reels déjà vus"
+   },
+   "viewedReelsTitle": {
+      "message": "Télécharger les reels visionnés"
+   },
+   "waitDownloadingEnd": {
+      "message": "Veuillez attendre la fin du téléchargement dans un autre onglet"
+   },
+   "wrongPageType": {
+      "message": "Page incorrecte"
+   }
+}

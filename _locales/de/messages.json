@@ -1,0 +1,176 @@
+{
+   "AllOptionTitle": {
+      "message": "Alle Beiträge der Seite herunterladen"
+   },
+   "DownloadedCounterTitle1": {
+      "message": "Heruntergeladen"
+   },
+   "DownloadedCounterTitle2": {
+      "message": "Elemente"
+   },
+   "additionalInfoErr": {
+      "message": "Bitte Seite aktualisieren und erneut versuchen"
+   },
+   "amountTitle": {
+      "message": "Nach Reihenfolge herunterladen"
+   },
+   "carouselNotFond": {
+      "message": "Karussell-Beitrag nicht gefunden"
+   },
+   "dateTitle": {
+      "message": "Nach Zeitraum herunterladen"
+   },
+   "defaultBaseFileName": {
+      "message": "InstagramDownloader"
+   },
+   "delimLineText": {
+      "message": "oder"
+   },
+   "description": {
+      "message": "Lade Instagram Stories, Reels, Videos und Fotos herunter – einzeln oder in großer Menge – direkt von instagram.com mit Instagram Downloader"
+   },
+   "dialogCancel": {
+      "message": "Abbrechen"
+   },
+   "dialogClose": {
+      "message": "Schließen"
+   },
+   "dialogOk": {
+      "message": "OK"
+   },
+   "dialogStopSave": {
+      "message": "Stoppen & Speichern"
+   },
+   "dialogTitleDefault": {
+      "message": "Vorbereiten"
+   },
+   "dialogTitleDw": {
+      "message": "Wird heruntergeladen"
+   },
+   "dialogTitleZip": {
+      "message": ".zip-Datei wird vorbereitet"
+   },
+   "disabledOptionToolTip": {
+      "message": "Download stoppen und bereits heruntergeladene Beiträge speichern"
+   },
+   "downloadAllBtn": {
+      "message": "Alle herunterladen"
+   },
+   "downloadBtn": {
+      "message": "Herunterladen"
+   },
+   "downloadDoneSuccess": {
+      "message": "Download erfolgreich abgeschlossen"
+   },
+   "downloadReqErr": {
+      "message": "Download fehlgeschlagen, bitte Internetverbindung prüfen"
+   },
+   "dwErr": {
+      "message": "Fehler beim Herunterladen. Bitte Seite neu laden und erneut versuchen."
+   },
+   "explorerNoPostsErr": {
+      "message": "Keine zufälligen Beiträge im Explorer"
+   },
+   "fromLbl": {
+      "message": "von"
+   },
+   "mainBtnNewText": {
+      "message": "Instagram Downloader"
+   },
+   "name": {
+      "message": "Instagram Downloader"
+   },
+   "noPostsErr": {
+      "message": "Keine Beiträge auf der Seite gefunden, bitte Seite neu laden"
+   },
+   "noPostsForCheckboxErr": {
+      "message": "Keine Beiträge gefunden"
+   },
+   "noPostsFromDate": {
+      "message": "Keine Beiträge für ausgewählte Daten gefunden"
+   },
+   "noUserInfo": {
+      "message": "Keine Benutzerinformationen gefunden"
+   },
+   "noWatchedReels": {
+      "message": "Keine Reels angesehen"
+   },
+   "notAllDwErr": {
+      "message": "Einige Dateien wurden nicht heruntergeladen"
+   },
+   "notPostsToDw": {
+      "message": "Keine Beiträge zum Herunterladen gefunden"
+   },
+   "notSupportPage": {
+      "message": "Diese Seite unterstützt keinen Massendownload"
+   },
+   "optionsPromoAdsLabel": {
+      "message": "Show promotional ads"
+   },
+   "optionsSaveBtn": {
+      "message": "Save"
+   },
+   "policyAcceptBtn": {
+      "message": "Accept"
+   },
+   "policyAcceptPromptAfter": {
+      "message": "to continue using the extension"
+   },
+   "policyAcceptPromptBefore": {
+      "message": "Please Accept our"
+   },
+   "policyAcceptPromptLinkText": {
+      "message": "Privacy Policy"
+   },
+   "policyUpdateTitle": {
+      "message": "Privacy Policy Update"
+   },
+   "rateUsDescr": {
+      "message": "Hinterlasse dein Feedback"
+   },
+   "reelsInfoErr": {
+      "message": "Keine Informationen zu angesehenen Reels gefunden. Bitte Seite neu laden."
+   },
+   "shortBaseFileName": {
+      "message": "ID"
+   },
+   "smthErr": {
+      "message": "Etwas ist schiefgelaufen, bitte Seite neu laden"
+   },
+   "smthWentWrong": {
+      "message": "Etwas ist schiefgelaufen"
+   },
+   "storiesDwDescription": {
+      "message": "Alle geöffneten Stories herunterladen"
+   },
+   "title": {
+      "message": ""
+   },
+   "toLbl": {
+      "message": "bis"
+   },
+   "userReelsNoPostsErr": {
+      "message": "Keine Reels gefunden"
+   },
+   "userSavedNoPostsErr": {
+      "message": "Keine gespeicherten Beiträge"
+   },
+   "userTagNoPostsErr": {
+      "message": "Keine markierten Beiträge des Nutzers"
+   },
+   "userWithStoriesErr": {
+      "message": "Keine Benutzerinformationen gefunden"
+   },
+   "viewedReelsDescription": {
+      "message": "Massendownload nur für als angesehen markierte Reels verfügbar"
+   },
+   "viewedReelsTitle": {
+      "message": "Angesehene Reels herunterladen"
+   },
+   "waitDownloadingEnd": {
+      "message": "Bitte warten, bis der Download im anderen Tab abgeschlossen ist"
+   },
+   "wrongPageType": {
+      "message": "Falscher Seitentyp"
+   }
+}

@@ -1,0 +1,176 @@
+{
+   "AllOptionTitle": {
+      "message": "Preuzmi sve objave sa stranice"
+   },
+   "DownloadedCounterTitle1": {
+      "message": "Preuzeto"
+   },
+   "DownloadedCounterTitle2": {
+      "message": "stavki"
+   },
+   "additionalInfoErr": {
+      "message": "Osvježi stranicu i pokušaj ponovno"
+   },
+   "amountTitle": {
+      "message": "Preuzimanje po redoslijedu"
+   },
+   "carouselNotFond": {
+      "message": "Žao nam je, objava u obliku karusela nije pronađena"
+   },
+   "dateTitle": {
+      "message": "Preuzimanje prema vremenskom rasponu"
+   },
+   "defaultBaseFileName": {
+      "message": "UltiDownloader"
+   },
+   "delimLineText": {
+      "message": "ili"
+   },
+   "description": {
+      "message": "Preuzmi Instagram priče, reels, videozapise i fotografije — pojedinačno ili masovno — direktno s instagram.com uz Instagram Downloader"
+   },
+   "dialogCancel": {
+      "message": "Otkaži"
+   },
+   "dialogClose": {
+      "message": "Zatvori"
+   },
+   "dialogOk": {
+      "message": "U redu"
+   },
+   "dialogStopSave": {
+      "message": "Zaustavi i spremi"
+   },
+   "dialogTitleDefault": {
+      "message": "Priprema"
+   },
+   "dialogTitleDw": {
+      "message": "Preuzimanje"
+   },
+   "dialogTitleZip": {
+      "message": "Priprema .zip datoteke"
+   },
+   "disabledOptionToolTip": {
+      "message": "Zaustavi preuzimanje i spremi već preuzete objave"
+   },
+   "downloadAllBtn": {
+      "message": "Preuzmi sve"
+   },
+   "downloadBtn": {
+      "message": "Preuzmi"
+   },
+   "downloadDoneSuccess": {
+      "message": "Preuzimanje uspješno završeno"
+   },
+   "downloadReqErr": {
+      "message": "Preuzimanje nije uspjelo, provjeri internetsku vezu"
+   },
+   "dwErr": {
+      "message": "Greška pri preuzimanju. Osvježi stranicu i pokušaj ponovno."
+   },
+   "explorerNoPostsErr": {
+      "message": "Nema nasumičnih objava u pregledniku"
+   },
+   "fromLbl": {
+      "message": "od"
+   },
+   "mainBtnNewText": {
+      "message": "Ulti Downloader"
+   },
+   "name": {
+      "message": "Instagram Downloader"
+   },
+   "noPostsErr": {
+      "message": "Nema objava na stranici, osvježi i pokušaj ponovno"
+   },
+   "noPostsForCheckboxErr": {
+      "message": "Nema pronađenih objava"
+   },
+   "noPostsFromDate": {
+      "message": "Nema objava za odabrane datume"
+   },
+   "noUserInfo": {
+      "message": "Nema informacija o korisniku"
+   },
+   "noWatchedReels": {
+      "message": "Nema pregledanih Reelsa"
+   },
+   "notAllDwErr": {
+      "message": "Neke datoteke nisu preuzete"
+   },
+   "notPostsToDw": {
+      "message": "Nema objava za preuzimanje"
+   },
+   "notSupportPage": {
+      "message": "Nažalost, ova stranica ne podržava masovno preuzimanje"
+   },
+   "optionsPromoAdsLabel": {
+      "message": "Show promotional ads"
+   },
+   "optionsSaveBtn": {
+      "message": "Save"
+   },
+   "policyAcceptBtn": {
+      "message": "Accept"
+   },
+   "policyAcceptPromptAfter": {
+      "message": "to continue using the extension"
+   },
+   "policyAcceptPromptBefore": {
+      "message": "Please Accept our"
+   },
+   "policyAcceptPromptLinkText": {
+      "message": "Privacy Policy"
+   },
+   "policyUpdateTitle": {
+      "message": "Privacy Policy Update"
+   },
+   "rateUsDescr": {
+      "message": "Ostavi svoju povratnu informaciju"
+   },
+   "reelsInfoErr": {
+      "message": "Nema informacija o svim pregledanim Reelsima. Pokušaj ponovno osvježiti stranicu."
+   },
+   "shortBaseFileName": {
+      "message": "UD"
+   },
+   "smthErr": {
+      "message": "Nešto je pošlo po zlu, osvježi stranicu i pokušaj ponovno"
+   },
+   "smthWentWrong": {
+      "message": "Nešto je pošlo po zlu"
+   },
+   "storiesDwDescription": {
+      "message": "Preuzmi sve trenutno otvorene priče"
+   },
+   "title": {
+      "message": ""
+   },
+   "toLbl": {
+      "message": "do"
+   },
+   "userReelsNoPostsErr": {
+      "message": "Nema pronađenih Reelsa"
+   },
+   "userSavedNoPostsErr": {
+      "message": "Nema spremljenih objava"
+   },
+   "userTagNoPostsErr": {
+      "message": "Nema označenih objava korisnika"
+   },
+   "userWithStoriesErr": {
+      "message": "Nema informacija o korisniku"
+   },
+   "viewedReelsDescription": {
+      "message": "Masovno preuzimanje dostupno samo za pregledane Reels"
+   },
+   "viewedReelsTitle": {
+      "message": "Preuzmi pregledane Reels"
+   },
+   "waitDownloadingEnd": {
+      "message": "Pričekaj da se preuzimanje iz druge kartice završi"
+   },
+   "wrongPageType": {
+      "message": "Pogrešna stranica"
+   }
+}

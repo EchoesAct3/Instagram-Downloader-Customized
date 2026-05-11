@@ -1,0 +1,176 @@
+{
+   "AllOptionTitle": {
+      "message": "페이지의 모든 게시물 다운로드"
+   },
+   "DownloadedCounterTitle1": {
+      "message": "다운로드됨"
+   },
+   "DownloadedCounterTitle2": {
+      "message": "항목"
+   },
+   "additionalInfoErr": {
+      "message": "페이지를 새로 고친 후 다시 시도하세요"
+   },
+   "amountTitle": {
+      "message": "순서대로 다운로드"
+   },
+   "carouselNotFond": {
+      "message": "죄송합니다. 캐러셀 게시물을 찾을 수 없습니다"
+   },
+   "dateTitle": {
+      "message": "기간별 다운로드"
+   },
+   "defaultBaseFileName": {
+      "message": "UltiDownloader"
+   },
+   "delimLineText": {
+      "message": "또는"
+   },
+   "description": {
+      "message": "Instagram의 스토리, 릴, 동영상, 사진을 — 하나씩 또는 한꺼번에 — instagram.com에서 바로 다운로드하세요. Instagram Downloader와 함께"
+   },
+   "dialogCancel": {
+      "message": "취소"
+   },
+   "dialogClose": {
+      "message": "닫기"
+   },
+   "dialogOk": {
+      "message": "확인"
+   },
+   "dialogStopSave": {
+      "message": "중지 & 저장"
+   },
+   "dialogTitleDefault": {
+      "message": "준비 중"
+   },
+   "dialogTitleDw": {
+      "message": "다운로드 중"
+   },
+   "dialogTitleZip": {
+      "message": ".zip 파일 준비 중"
+   },
+   "disabledOptionToolTip": {
+      "message": "다운로드 중지하고 이미 다운로드된 게시물 저장"
+   },
+   "downloadAllBtn": {
+      "message": "모두 다운로드"
+   },
+   "downloadBtn": {
+      "message": "다운로드"
+   },
+   "downloadDoneSuccess": {
+      "message": "다운로드가 성공적으로 완료되었습니다"
+   },
+   "downloadReqErr": {
+      "message": "다운로드 실패, 인터넷 연결을 확인하세요"
+   },
+   "dwErr": {
+      "message": "다운로드 오류. 페이지를 새로 고치고 다시 시도하세요."
+   },
+   "explorerNoPostsErr": {
+      "message": "탐색기(Explorer)에 무작위 게시물이 없습니다"
+   },
+   "fromLbl": {
+      "message": "부터"
+   },
+   "mainBtnNewText": {
+      "message": "Ulti Downloader"
+   },
+   "name": {
+      "message": "Instagram Downloader"
+   },
+   "noPostsErr": {
+      "message": "페이지에 게시물이 없습니다. 페이지를 새로 고치고 다시 시도해주세요"
+   },
+   "noPostsForCheckboxErr": {
+      "message": "게시물을 찾을 수 없습니다"
+   },
+   "noPostsFromDate": {
+      "message": "선택한 날짜에 게시물이 없습니다"
+   },
+   "noUserInfo": {
+      "message": "사용자 정보가 없습니다"
+   },
+   "noWatchedReels": {
+      "message": "본 릴이 없습니다"
+   },
+   "notAllDwErr": {
+      "message": "일부 파일이 다운로드되지 않았습니다"
+   },
+   "notPostsToDw": {
+      "message": "다운로드할 게시물이 없습니다"
+   },
+   "notSupportPage": {
+      "message": "죄송합니다. 이 페이지는 대량 다운로드를 지원하지 않습니다"
+   },
+   "optionsPromoAdsLabel": {
+      "message": "Show promotional ads"
+   },
+   "optionsSaveBtn": {
+      "message": "Save"
+   },
+   "policyAcceptBtn": {
+      "message": "Accept"
+   },
+   "policyAcceptPromptAfter": {
+      "message": "to continue using the extension"
+   },
+   "policyAcceptPromptBefore": {
+      "message": "Please Accept our"
+   },
+   "policyAcceptPromptLinkText": {
+      "message": "Privacy Policy"
+   },
+   "policyUpdateTitle": {
+      "message": "Privacy Policy Update"
+   },
+   "rateUsDescr": {
+      "message": "피드백을 남겨주세요"
+   },
+   "reelsInfoErr": {
+      "message": "본 릴에 대한 모든 정보가 없습니다. 페이지를 새로 고치고 다시 시도하세요."
+   },
+   "shortBaseFileName": {
+      "message": "UD"
+   },
+   "smthErr": {
+      "message": "문제가 발생했습니다. 페이지를 새로 고치고 다시 시도하세요"
+   },
+   "smthWentWrong": {
+      "message": "문제가 발생했습니다"
+   },
+   "storiesDwDescription": {
+      "message": "현재 열린 Stories 모두 다운로드"
+   },
+   "title": {
+      "message": ""
+   },
+   "toLbl": {
+      "message": "까지"
+   },
+   "userReelsNoPostsErr": {
+      "message": "릴을 찾을 수 없습니다"
+   },
+   "userSavedNoPostsErr": {
+      "message": "저장된 게시물이 없습니다"
+   },
+   "userTagNoPostsErr": {
+      "message": "사용자의 태그된 게시물이 없습니다"
+   },
+   "userWithStoriesErr": {
+      "message": "사용자 정보가 없습니다"
+   },
+   "viewedReelsDescription": {
+      "message": "본 릴만 대량 다운로드 가능"
+   },
+   "viewedReelsTitle": {
+      "message": "본 릴 다운로드"
+   },
+   "waitDownloadingEnd": {
+      "message": "다른 탭에서 다운로드가 끝날 때까지 기다려주세요"
+   },
+   "wrongPageType": {
+      "message": "잘못된 페이지 유형"
+   }
+}

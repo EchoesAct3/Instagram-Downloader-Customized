@@ -1,0 +1,176 @@
+{
+   "AllOptionTitle": {
+      "message": "הורד את כל הפוסטים מהעמוד"
+   },
+   "DownloadedCounterTitle1": {
+      "message": "הורדו"
+   },
+   "DownloadedCounterTitle2": {
+      "message": "פריטים"
+   },
+   "additionalInfoErr": {
+      "message": "נא לרענן את הדף ולנסות שוב"
+   },
+   "amountTitle": {
+      "message": "הורדה לפי סדר"
+   },
+   "carouselNotFond": {
+      "message": "הפוסט מסוג קרוסלה לא נמצא"
+   },
+   "dateTitle": {
+      "message": "הורדה לפי טווח תאריכים"
+   },
+   "defaultBaseFileName": {
+      "message": "UltiDownloader"
+   },
+   "delimLineText": {
+      "message": "או"
+   },
+   "description": {
+      "message": "הורד Stories, Reels, סרטונים ותמונות מאינסטגרם — באופן בודד או בכמות גדולה — ישירות מ‑instagram.com עם Instagram Downloader"
+   },
+   "dialogCancel": {
+      "message": "בטל"
+   },
+   "dialogClose": {
+      "message": "סגור"
+   },
+   "dialogOk": {
+      "message": "אישור"
+   },
+   "dialogStopSave": {
+      "message": "עצור ושמור"
+   },
+   "dialogTitleDefault": {
+      "message": "בהכנה"
+   },
+   "dialogTitleDw": {
+      "message": "מוריד"
+   },
+   "dialogTitleZip": {
+      "message": "מכין קובץ ‎.zip"
+   },
+   "disabledOptionToolTip": {
+      "message": "הפסק הורדה ושמור את הפוסטים שכבר הורדו"
+   },
+   "downloadAllBtn": {
+      "message": "הורד הכל"
+   },
+   "downloadBtn": {
+      "message": "הורד"
+   },
+   "downloadDoneSuccess": {
+      "message": "ההורדה הושלמה בהצלחה"
+   },
+   "downloadReqErr": {
+      "message": "ההורדה נכשלה, אנא בדוק את חיבור האינטרנט שלך"
+   },
+   "dwErr": {
+      "message": "שגיאת הורדה. רענן את הדף ונסה שוב."
+   },
+   "explorerNoPostsErr": {
+      "message": "אין פוסטים אקראיים בסייר"
+   },
+   "fromLbl": {
+      "message": "מ"
+   },
+   "mainBtnNewText": {
+      "message": "Ulti Downloader"
+   },
+   "name": {
+      "message": "Instagram Downloader"
+   },
+   "noPostsErr": {
+      "message": "לא נמצאו פוסטים בעמוד, נא לרענן ולנסות שוב"
+   },
+   "noPostsForCheckboxErr": {
+      "message": "לא נמצאו פוסטים"
+   },
+   "noPostsFromDate": {
+      "message": "לא נמצאו פוסטים בטווח התאריכים שנבחר"
+   },
+   "noUserInfo": {
+      "message": "לא נמצאו פרטי משתמש"
+   },
+   "noWatchedReels": {
+      "message": "לא נצפו Reels"
+   },
+   "notAllDwErr": {
+      "message": "חלק מהקבצים לא הורדו"
+   },
+   "notPostsToDw": {
+      "message": "אין פוסטים להורדה"
+   },
+   "notSupportPage": {
+      "message": "מצטערים, דף זה לא תומך בהורדה מרוכזת"
+   },
+   "optionsPromoAdsLabel": {
+      "message": "Show promotional ads"
+   },
+   "optionsSaveBtn": {
+      "message": "Save"
+   },
+   "policyAcceptBtn": {
+      "message": "Accept"
+   },
+   "policyAcceptPromptAfter": {
+      "message": "to continue using the extension"
+   },
+   "policyAcceptPromptBefore": {
+      "message": "Please Accept our"
+   },
+   "policyAcceptPromptLinkText": {
+      "message": "Privacy Policy"
+   },
+   "policyUpdateTitle": {
+      "message": "Privacy Policy Update"
+   },
+   "rateUsDescr": {
+      "message": "השאר את המשוב שלך"
+   },
+   "reelsInfoErr": {
+      "message": "לא נמצאה מידע על כל ה‑Reels שנצפו. נסה לרענן את הדף."
+   },
+   "shortBaseFileName": {
+      "message": "UD"
+   },
+   "smthErr": {
+      "message": "משהו השתבש, נא לרענן את הדף ולנסות שוב"
+   },
+   "smthWentWrong": {
+      "message": "משהו השתבש"
+   },
+   "storiesDwDescription": {
+      "message": "הורד את כל ה‑Stories הפתוחים כעת"
+   },
+   "title": {
+      "message": ""
+   },
+   "toLbl": {
+      "message": "עד"
+   },
+   "userReelsNoPostsErr": {
+      "message": "לא נמצאו Reels"
+   },
+   "userSavedNoPostsErr": {
+      "message": "אין פוסטים שמורים"
+   },
+   "userTagNoPostsErr": {
+      "message": "אין פוסטים מתויגים מהמשתמש"
+   },
+   "userWithStoriesErr": {
+      "message": "לא נמצאו פרטי משתמש"
+   },
+   "viewedReelsDescription": {
+      "message": "הורדה מרוכזת זמינה רק עבור Reels שסומנו כנצפו"
+   },
+   "viewedReelsTitle": {
+      "message": "הורד Reels שנצפו"
+   },
+   "waitDownloadingEnd": {
+      "message": "אנא המתן לסיום ההורדה בטאב אחר"
+   },
+   "wrongPageType": {
+      "message": "סוג דף שגוי"
+   }
+}

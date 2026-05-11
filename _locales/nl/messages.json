@@ -1,0 +1,176 @@
+{
+   "AllOptionTitle": {
+      "message": "Alle posts van de pagina downloaden"
+   },
+   "DownloadedCounterTitle1": {
+      "message": "Gedownload"
+   },
+   "DownloadedCounterTitle2": {
+      "message": "items"
+   },
+   "additionalInfoErr": {
+      "message": "Ververs de pagina en probeer het opnieuw"
+   },
+   "amountTitle": {
+      "message": "Download per volgorde"
+   },
+   "carouselNotFond": {
+      "message": "Karrousel‑post niet gevonden"
+   },
+   "dateTitle": {
+      "message": "Download per tijdsperiode"
+   },
+   "defaultBaseFileName": {
+      "message": "UltiDownloader"
+   },
+   "delimLineText": {
+      "message": "of"
+   },
+   "description": {
+      "message": "Download Instagram‑verhalen, reels, video's en foto's — individueel of in bulk — rechtstreeks van instagram.com met Instagram Downloader"
+   },
+   "dialogCancel": {
+      "message": "Annuleren"
+   },
+   "dialogClose": {
+      "message": "Sluiten"
+   },
+   "dialogOk": {
+      "message": "OK"
+   },
+   "dialogStopSave": {
+      "message": "Stoppen & Opslaan"
+   },
+   "dialogTitleDefault": {
+      "message": "Voorbereiden"
+   },
+   "dialogTitleDw": {
+      "message": "Bezig met downloaden"
+   },
+   "dialogTitleZip": {
+      "message": "Voorbereiden van .zip bestand"
+   },
+   "disabledOptionToolTip": {
+      "message": "Stop met downloaden en sla de reeds gedownloade berichten op"
+   },
+   "downloadAllBtn": {
+      "message": "Alles downloaden"
+   },
+   "downloadBtn": {
+      "message": "Download"
+   },
+   "downloadDoneSuccess": {
+      "message": "Download succesvol voltooid"
+   },
+   "downloadReqErr": {
+      "message": "Download mislukt, controleer je internetverbinding"
+   },
+   "dwErr": {
+      "message": "Downloadfout. Vernieuw de pagina en probeer opnieuw."
+   },
+   "explorerNoPostsErr": {
+      "message": "Geen willekeurige berichten in de verkenner"
+   },
+   "fromLbl": {
+      "message": "van"
+   },
+   "mainBtnNewText": {
+      "message": "Ulti Downloader"
+   },
+   "name": {
+      "message": "Instagram Downloader"
+   },
+   "noPostsErr": {
+      "message": "Geen berichten op de pagina gevonden, vernieuw de pagina en probeer opnieuw"
+   },
+   "noPostsForCheckboxErr": {
+      "message": "Geen berichten gevonden"
+   },
+   "noPostsFromDate": {
+      "message": "Geen berichten voor de geselecteerde data"
+   },
+   "noUserInfo": {
+      "message": "Geen gebruikersinformatie gevonden"
+   },
+   "noWatchedReels": {
+      "message": "Geen reels bekeken"
+   },
+   "notAllDwErr": {
+      "message": "Niet alle bestanden zijn gedownload"
+   },
+   "notPostsToDw": {
+      "message": "Geen berichten om te downloaden"
+   },
+   "notSupportPage": {
+      "message": "Deze pagina ondersteunt geen massale downloads"
+   },
+   "optionsPromoAdsLabel": {
+      "message": "Show promotional ads"
+   },
+   "optionsSaveBtn": {
+      "message": "Save"
+   },
+   "policyAcceptBtn": {
+      "message": "Accept"
+   },
+   "policyAcceptPromptAfter": {
+      "message": "to continue using the extension"
+   },
+   "policyAcceptPromptBefore": {
+      "message": "Please Accept our"
+   },
+   "policyAcceptPromptLinkText": {
+      "message": "Privacy Policy"
+   },
+   "policyUpdateTitle": {
+      "message": "Privacy Policy Update"
+   },
+   "rateUsDescr": {
+      "message": "Laat je feedback achter"
+   },
+   "reelsInfoErr": {
+      "message": "Geen informatie over alle bekeken reels gevonden. Vernieuw de pagina en probeer opnieuw."
+   },
+   "shortBaseFileName": {
+      "message": "UD"
+   },
+   "smthErr": {
+      "message": "Er is iets misgegaan, vernieuw de pagina en probeer opnieuw"
+   },
+   "smthWentWrong": {
+      "message": "Er is iets misgegaan"
+   },
+   "storiesDwDescription": {
+      "message": "Download alle momenteel geopende Stories"
+   },
+   "title": {
+      "message": ""
+   },
+   "toLbl": {
+      "message": "tot"
+   },
+   "userReelsNoPostsErr": {
+      "message": "Geen reels gevonden"
+   },
+   "userSavedNoPostsErr": {
+      "message": "Geen opgeslagen berichten"
+   },
+   "userTagNoPostsErr": {
+      "message": "Geen gemarkeerde berichten van de gebruiker"
+   },
+   "userWithStoriesErr": {
+      "message": "Geen gebruikersinformatie gevonden"
+   },
+   "viewedReelsDescription": {
+      "message": "Massale download alleen beschikbaar voor reels die al bekeken zijn"
+   },
+   "viewedReelsTitle": {
+      "message": "Bekijkte reels downloaden"
+   },
+   "waitDownloadingEnd": {
+      "message": "Wacht alsjeblieft tot het downloaden in een ander tabblad voltooid is"
+   },
+   "wrongPageType": {
+      "message": "Verkeerd type pagina"
+   }
+}

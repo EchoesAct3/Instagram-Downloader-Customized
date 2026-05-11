@@ -1,0 +1,176 @@
+{
+   "AllOptionTitle": {
+      "message": "Sayfadaki tüm gönderileri indir"
+   },
+   "DownloadedCounterTitle1": {
+      "message": "İndirildi"
+   },
+   "DownloadedCounterTitle2": {
+      "message": "öğe"
+   },
+   "additionalInfoErr": {
+      "message": "Lütfen sayfayı yenileyip tekrar deneyin"
+   },
+   "amountTitle": {
+      "message": "Sıralamaya göre indir"
+   },
+   "carouselNotFond": {
+      "message": "Üzgünüz, karusel gönderi bulunamadı"
+   },
+   "dateTitle": {
+      "message": "Zamana göre indir"
+   },
+   "defaultBaseFileName": {
+      "message": "UltiDownloader"
+   },
+   "delimLineText": {
+      "message": "veya"
+   },
+   "description": {
+      "message": "Instagram hikayelerini, reels’lerini, videolarını ve fotoğraflarını tek tek veya toplu olarak indir — instagram.com üzerinden Instagram Downloader ile"
+   },
+   "dialogCancel": {
+      "message": "İptal"
+   },
+   "dialogClose": {
+      "message": "Kapat"
+   },
+   "dialogOk": {
+      "message": "Tamam"
+   },
+   "dialogStopSave": {
+      "message": "Durdur & Kaydet"
+   },
+   "dialogTitleDefault": {
+      "message": "Hazırlanıyor"
+   },
+   "dialogTitleDw": {
+      "message": "İndiriliyor"
+   },
+   "dialogTitleZip": {
+      "message": ".zip dosyası hazırlanıyor"
+   },
+   "disabledOptionToolTip": {
+      "message": "İndirmeyi durdur ve halihazırda indirilen gönderileri kaydet"
+   },
+   "downloadAllBtn": {
+      "message": "Hepsini indir"
+   },
+   "downloadBtn": {
+      "message": "İndir"
+   },
+   "downloadDoneSuccess": {
+      "message": "İndirme başarıyla tamamlandı"
+   },
+   "downloadReqErr": {
+      "message": "İndirme başarısız, internet bağlantınızı kontrol edin"
+   },
+   "dwErr": {
+      "message": "İndirme hatası. Lütfen sayfayı yenileyin ve tekrar deneyin."
+   },
+   "explorerNoPostsErr": {
+      "message": "Gezgin bölümünde rastgele gönderi yok"
+   },
+   "fromLbl": {
+      "message": "dan"
+   },
+   "mainBtnNewText": {
+      "message": "Ulti Downloader"
+   },
+   "name": {
+      "message": "Instagram Downloader"
+   },
+   "noPostsErr": {
+      "message": "Sayfada gönderi bulunamadı, lütfen sayfayı yenileyip tekrar deneyin"
+   },
+   "noPostsForCheckboxErr": {
+      "message": "Gönderi bulunamadı"
+   },
+   "noPostsFromDate": {
+      "message": "Seçilen tarihlerde gönderi yok"
+   },
+   "noUserInfo": {
+      "message": "Kullanıcı bilgisi yok"
+   },
+   "noWatchedReels": {
+      "message": "İzlenmiş reels yok"
+   },
+   "notAllDwErr": {
+      "message": "Bazı dosyalar indirilemedi"
+   },
+   "notPostsToDw": {
+      "message": "İndirilecek gönderi yok"
+   },
+   "notSupportPage": {
+      "message": "Üzgünüz, bu sayfa toplu indirmeyi desteklemiyor"
+   },
+   "optionsPromoAdsLabel": {
+      "message": "Show promotional ads"
+   },
+   "optionsSaveBtn": {
+      "message": "Save"
+   },
+   "policyAcceptBtn": {
+      "message": "Accept"
+   },
+   "policyAcceptPromptAfter": {
+      "message": "to continue using the extension"
+   },
+   "policyAcceptPromptBefore": {
+      "message": "Please Accept our"
+   },
+   "policyAcceptPromptLinkText": {
+      "message": "Privacy Policy"
+   },
+   "policyUpdateTitle": {
+      "message": "Privacy Policy Update"
+   },
+   "rateUsDescr": {
+      "message": "Görüşlerinizi bırakın"
+   },
+   "reelsInfoErr": {
+      "message": "İzlenmiş tüm reels hakkında bilgi bulunamadı. Lütfen sayfayı yenileyip tekrar deneyin."
+   },
+   "shortBaseFileName": {
+      "message": "UD"
+   },
+   "smthErr": {
+      "message": "Bir şeyler ters gitti, sayfayı yenileyin ve tekrar deneyin"
+   },
+   "smthWentWrong": {
+      "message": "Bir şeyler ters gitti"
+   },
+   "storiesDwDescription": {
+      "message": "Şu anda açık olan tüm Hikayeleri indir"
+   },
+   "title": {
+      "message": ""
+   },
+   "toLbl": {
+      "message": "kadar"
+   },
+   "userReelsNoPostsErr": {
+      "message": "Reels bulunamadı"
+   },
+   "userSavedNoPostsErr": {
+      "message": "Kaydedilmiş gönderi yok"
+   },
+   "userTagNoPostsErr": {
+      "message": "Kullanıcının etiketiyle gönderi yok"
+   },
+   "userWithStoriesErr": {
+      "message": "Kullanıcı bilgisi bulunamadı"
+   },
+   "viewedReelsDescription": {
+      "message": "Toplu indirme yalnızca izlenmiş reels’ler için geçerlidir"
+   },
+   "viewedReelsTitle": {
+      "message": "İzlenen reels’leri indir"
+   },
+   "waitDownloadingEnd": {
+      "message": "Başka bir sekmede devam eden indirme tamamlanana kadar bekleyin"
+   },
+   "wrongPageType": {
+      "message": "Yanlış sayfa türü"
+   }
+}

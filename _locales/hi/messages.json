@@ -1,0 +1,176 @@
+{
+   "AllOptionTitle": {
+      "message": "Download all posts from page"
+   },
+   "DownloadedCounterTitle1": {
+      "message": "Downloaded"
+   },
+   "DownloadedCounterTitle2": {
+      "message": "items"
+   },
+   "additionalInfoErr": {
+      "message": "Please refresh the page and try again"
+   },
+   "amountTitle": {
+      "message": "Download by sequence"
+   },
+   "carouselNotFond": {
+      "message": "Sorry, carousel post cannot be found"
+   },
+   "dateTitle": {
+      "message": "Download by timeframe"
+   },
+   "defaultBaseFileName": {
+      "message": "UltiDownloader"
+   },
+   "delimLineText": {
+      "message": "or"
+   },
+   "description": {
+      "message": "Download Stories, Reels, Photos and Videos from Instagram. Single and mass download of any content from instagram.com"
+   },
+   "dialogCancel": {
+      "message": "Cancel"
+   },
+   "dialogClose": {
+      "message": "Close"
+   },
+   "dialogOk": {
+      "message": "Ok"
+   },
+   "dialogStopSave": {
+      "message": "Stop & Save"
+   },
+   "dialogTitleDefault": {
+      "message": "Preparing"
+   },
+   "dialogTitleDw": {
+      "message": "Downloading"
+   },
+   "dialogTitleZip": {
+      "message": "Preparing .zip file"
+   },
+   "disabledOptionToolTip": {
+      "message": "Stop downloading and save already downloaded posts"
+   },
+   "downloadAllBtn": {
+      "message": "Download all"
+   },
+   "downloadBtn": {
+      "message": "Download"
+   },
+   "downloadDoneSuccess": {
+      "message": "Download completed successfully"
+   },
+   "downloadReqErr": {
+      "message": "Downloading failed, please check your internet connection"
+   },
+   "dwErr": {
+      "message": "Downloading error. Please, reload page and try again."
+   },
+   "explorerNoPostsErr": {
+      "message": "No random posts on explorer"
+   },
+   "fromLbl": {
+      "message": "from"
+   },
+   "mainBtnNewText": {
+      "message": "Ulti Downloader"
+   },
+   "name": {
+      "message": "Instagram Downloader"
+   },
+   "noPostsErr": {
+      "message": "No posts on the page found, please reload page and try again"
+   },
+   "noPostsForCheckboxErr": {
+      "message": "No posts found"
+   },
+   "noPostsFromDate": {
+      "message": "No posts for selected dates"
+   },
+   "noUserInfo": {
+      "message": "No info about the user found"
+   },
+   "noWatchedReels": {
+      "message": "No Reels viewed"
+   },
+   "notAllDwErr": {
+      "message": "Some files were not downloaded"
+   },
+   "notPostsToDw": {
+      "message": "No posts to be downloaded"
+   },
+   "notSupportPage": {
+      "message": "Sorry, but this page doesn't support mass download"
+   },
+   "optionsPromoAdsLabel": {
+      "message": "Show promotional ads"
+   },
+   "optionsSaveBtn": {
+      "message": "Save"
+   },
+   "policyAcceptBtn": {
+      "message": "Accept"
+   },
+   "policyAcceptPromptAfter": {
+      "message": "to continue using the extension"
+   },
+   "policyAcceptPromptBefore": {
+      "message": "Please Accept our"
+   },
+   "policyAcceptPromptLinkText": {
+      "message": "Privacy Policy"
+   },
+   "policyUpdateTitle": {
+      "message": "Privacy Policy Update"
+   },
+   "rateUsDescr": {
+      "message": "Leave Your Feedback"
+   },
+   "reelsInfoErr": {
+      "message": "No information about all viewed Reels found. Please reload the page and try again."
+   },
+   "shortBaseFileName": {
+      "message": "UD"
+   },
+   "smthErr": {
+      "message": "Something went wrong, please reload page and try again"
+   },
+   "smthWentWrong": {
+      "message": "Something went wrong"
+   },
+   "storiesDwDescription": {
+      "message": "Download all currently opened Stories"
+   },
+   "title": {
+      "message": ""
+   },
+   "toLbl": {
+      "message": "to"
+   },
+   "userReelsNoPostsErr": {
+      "message": "No Reels found"
+   },
+   "userSavedNoPostsErr": {
+      "message": "No saved posts"
+   },
+   "userTagNoPostsErr": {
+      "message": "No tagged posts from the user"
+   },
+   "userWithStoriesErr": {
+      "message": "No info about the user found"
+   },
+   "viewedReelsDescription": {
+      "message": "Mass download available only for Reels with viewed status"
+   },
+   "viewedReelsTitle": {
+      "message": "Download viewed reels"
+   },
+   "waitDownloadingEnd": {
+      "message": "Please wait when downloading from another tab is over"
+   },
+   "wrongPageType": {
+      "message": "Wrong page"
+   }
+}
