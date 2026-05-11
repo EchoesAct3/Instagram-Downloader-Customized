@@ -1,1 +1,1872 @@
-(()=>{var e=[,e=>{e.exports=function(){return{t:null,o:function(e){let t=new URL(e.url);if(!t)return;if(!e.initiator||!e.initiator.includes("instagram.com"))return;let r=JSON.parse(t.searchParams.get("variables")),n=t.searchParams.get("query_hash");r&&n&&chrome.tabs.get(e.tabId,(function(e){if(chrome.runtime.lastError||!e.url)return;let t=e.url;chrome.storage.local.get("instaQueryHash",(function(e){let o=e.instaQueryHash||{};if(r.child_comment_count&&r.shortcode)return o.forSinglePost=n,void chrome.storage.local.set({instaQueryHash:o});if(r.user_id&&r.include_chaining&&r.include_reel&&r.include_highlight_reels)return o.forHighlightsList=n,void chrome.storage.local.set({instaQueryHash:o});if(r.id&&r.first){if(t.includes("/saved/"))o.forUserSavedPosts=n;else if(t.includes("/tagged/"))o.forUserTagPosts=n;else{if(t.includes("/guides/"))return;if(t.includes("/explore/"))return;if(!t.match("instagram.com/([^/]+)/$"))return;o.forUserAllPosts=n}chrome.storage.local.set({instaQueryHash:o})}}))}))},i:function(e){!e.requestHeaders||e.requestHeaders.length<1||chrome.storage.local.get("instaHeaders",(function(t){let r=t.instaHeaders||{};for(let t=0;t<e.requestHeaders.length;++t)"x-ig-www-claim"===e.requestHeaders[t].name.toLowerCase()&&(r.xIgWwwClaim=e.requestHeaders[t].value),"x-ig-app-id"===e.requestHeaders[t].name.toLowerCase()&&(r.xIgAppId=e.requestHeaders[t].value),"x-asbd-id"===e.requestHeaders[t].name.toLowerCase()&&(r.xAsbdId=e.requestHeaders[t].value);chrome.storage.local.set({instaHeaders:r})}))},_:function(){let e=this;return new Promise((function(t,r){chrome.storage.local.get("instaHeaders",(function(n){return(n.instaHeaders||n.instaHeaders.xIgWwwClaim)&&n.instaHeaders.xIgAppId&&n.instaHeaders.xAsbdId?e.u().then((function(e){return e||r("no_token"),t({"x-ig-www-claim":n.instaHeaders.xIgWwwClaim,"x-ig-app-id":n.instaHeaders.xIgAppId,"x-asbd-id":n.instaHeaders.xAsbdId,"x-csrftoken":e})})):r("no_headers")}))}))},l:function(){return new Promise((function(e,t){chrome.cookies.get({url:"https://instagram.com",name:"csrftoken"},(function(t){return e(t&&t.value)}))}))},m:function(e){this.t=e},u:function(){let e=this;return new Promise((function(t,r){if(e.t)return t(e.t);e.l().then((function(n){return n?(e.m(n),t(n)):r()}))}))},h(){let e=this;this.l().then((function(t){e.m(t)}))}}}()},(e,t,r)=>{const n=r(3),o=r(8),i=r(9),s=r(1),_=r(5);e.exports=function(){return{$:function(e){function t(e){return new Promise((function(t,r){chrome.tabs.sendMessage(e,{message:"isDownload"},(function(e){let n=chrome.runtime.lastError;return e&&e.isDownload?t():r()}))}))}chrome.tabs.query({url:["*://*.instagram.com/*"]},(function(r){let n=[];for(let e of r)n.push(t(e.id));return Promise.any(n).then((function(){e(!0)})).catch((function(){e(!1)})),!0}))},p:function(e,t){if(!e||!e.url)return t();let r={url:e.url};e.filename?r.filename=e.filename:r.filename=null,chrome.downloads.download(r,(function(r){r?t(r):chrome.downloads.download({url:e.url},(function(e){t(e)}))}))},v:function(){let e=this;chrome.runtime.onMessage.addListener((function(t,r,s){return t?"get_download_status"===t.title?(e.$(s),!0):"get_html_by_shortcode"===t.title?(n.P(t,s),!0):"get_feed_posts"===t.title?(n.I(t,s),!0):"get_post_info"===t.title?(n.S(t,s),!0):"get_media_from_post"===t.title?(n.T(t,s),!0):"get_media_from_post_by_id"===t.title?(n.U(t,s),!0):"get_reels_posts"===t.title?(n.A(t,s),!0):"get_explorer_basic_by_type"===t.title?(n.k(t,s),!0):"get_explorer_scroll_by_type"===t.title?(n.N(t,s),!0):"get_reels_audio"===t.title?(n.R(t,s),!0):"get_user_stories"===t.title?(o.H(t,s),!0):"get_user_highlight"===t.title?(o.C(t,s),!0):"get_reels_tray_info"===t.title?(o.B(s),!0):"get_user_reels"===t.title?(i.L(t,s),!0):"get_user_id"===t.title?(i.O(t,s),!0):"get_user_info"===t.title?(i.q(t,s),!0):"get_user_info_posts"===t.title?(i.F(t,s),!0):"get_user_saved_all_posts"===t.title?(i.G(t,s),!0):"get_user_saved_all_posts_alt"===t.title?(i.M(t,s),!0):"get_user_saved_collection"===t.title?(i.D(t,s),!0):"get_user_tag_posts"===t.title?(i.j(t,s),!0):"get_user_posts"===t.title?(i.V(t,s),!0):"get_user_posts_alt"===t.title?(i.J(t,s),!0):"download_file"===t.title?(e.p(t.opts,s),!0):"policy_accept_by_user"===t.title?(e.Y(t.value).then((()=>s({ok:!0}))).catch((()=>s({ok:!1}))),!0):"is_policy_accepted"===t.title?(e.X().then(s),!0):"is_ads_allowed"===t.title?(e.K().then(s),!0):void 0:s(null)}));let t=["requestHeaders","extraHeaders"];chrome.webRequest.onBeforeSendHeaders.addListener(s.i,{urls:["*://*.instagram.com/*/"]},t),chrome.webRequest.onBeforeSendHeaders.addListener(s.o,{urls:["*://*.instagram.com/graphql/query/?*"]},t),chrome.runtime.onConnect.addListener((function(e){})),chrome.tabs.onUpdated.addListener((function(e,t,r){if(r.url.includes("instagram")&&t.url){let r=t.url.match(/(?<=\/reels\/).[^\/]+(?=\/$)/);if(r=r&&r[0]||null,r)return chrome.tabs.sendMessage(e,{message:"reelFeedScroll",url:t.url,shortcode:r},(function(){if(chrome.runtime.lastError)return null}));let n=t.url.match(/(?<=.com\/).+?(?=\/)/);n=n&&n[0]||null,chrome.tabs.sendMessage(e,{message:"url",pageName:n,url:t.url},(function(e){if(chrome.runtime.lastError)return null}))}return!0})),chrome.action.onClicked.addListener((function(){chrome.tabs.create({url:"https://instagram.com"})}))},K:()=>Promise.all([chrome.storage.sync.get(_.W),chrome.storage.local.get(_.W)]).then((([e,t])=>!(!e[_.W]&&!t[_.W]))),X:()=>Promise.all([chrome.storage.sync.get(_.Z),chrome.storage.local.get(_.Z)]).then((([e,t])=>!(!e[_.Z]&&!t[_.Z]))).catch((e=>{})),Y(e){const t={[_.W]:!!e,[_.Z]:!0};try{return Promise.allSettled([chrome.storage.local.set(t),chrome.storage.sync.set(t)]).then((()=>{}))}catch(e){return Promise.resolve()}}}}()},(e,t,r)=>{const n=r(4),o=r(1),i=r(5),s=r(6);e.exports=function(){return{ee:0,I:function(e,t){let r="https://i.instagram.com/api/v1/feed/timeline/";o._().then((function(o){let i={method:"POST",headers:{...o,"content-type":"application/x-www-form-urlencoded"}};e.maxId&&(i.body="max_id="+encodeURIComponent(e.maxId)),n.te(r,i,(function(e){let r=s.re(e);t(r)}))})).catch((function(e){t({err:e})}))},S:function(e,t){if(!e.postId)return t({err:"no_post_id"});o._().then((function(r){let o={method:"GET",headers:{...r}},i="https://i.instagram.com/api/v1/media/"+e.postId+"/info/";n.te(i,o,(function(e){let r=s.ne(e);t(r)}))})).catch((function(e){t({err:e})}))},P:function(e,t){if(!e.shortcode)return t({err:"empty_shortcode"});o._().then((function(r){let o={method:"GET",headers:{...r,accept:"text/html"}},i=`https://www.instagram.com/p/${e.shortcode}/`;n.oe(i,o,(function(r){let n=s.ie(r,e.shortcode);t(n)}))})).catch((function(e){t({err:e})}))},T:function(e,t){if(!e.shortcode)return t({err:"empty_shortcode"});if(this.ee>3)return t({err:!0});let r=this;o._().then((function(o){let s={method:"GET",headers:{...o}};chrome.storage.local.get("instaQueryHash",(function(o){let _=o.instaQueryHash&&o.instaQueryHash.forSinglePost||i.se,u="https://www.instagram.com/graphql/query/?query_hash="+_+"&variables="+encodeURIComponent(JSON.stringify({shortcode:e.shortcode,child_comment_count:3,fetch_comment_count:40,has_threaded_comments:!0,parent_comment_count:24}));n.te(u,s,(function(n){n.err?_!==i.se?(delete o.instaQueryHash.forSinglePost,chrome.storage.local.set({instaQueryHash:o.instaQueryHash},(function(){r.T(e,t)}))):(r.ee++,t({err:"empty_response"})):(r.ee=0,t(n))}))}))})).catch((function(e){t({err:e})}))},U:function(e,t){if(!e.mediaId)return t({err:"empty_shortcode"});o._().then((function(r){let o={method:"GET",headers:{...r}};const i=`https://www.instagram.com/api/v1/media/${e.mediaId}/info/`;n.te(i,o,(function(e){let r=s._e(e);t(r)}))})).catch((function(e){t({err:e})}))},A:function(e,t){if(!e.userId)return t({err:"no_userId"});o._().then((function(r){let o={method:"POST",headers:{...r,"content-type":"application/x-www-form-urlencoded"}};o.body=`target_user_id=${e.userId}&page_size=12&include_feed_video=true`,e.maxId&&(o.body+="&max_id="+e.maxId);let i="https://i.instagram.com/api/v1/clips/user/";n.te(i,o,(function(e){let r=s.ue(e);t(r)}))})).catch((function(e){t({err:e})}))},k:function(e,t){if(!e.searchId||!e.type)return t({err:"no_info_for_req"});o._().then((function(r){let o={method:"GET",headers:r},i="";"tags"===e.type?i=`tag_name=${e.searchId}`:"locations"===e.type&&(i=`location_id=${e.searchId}`);let _=`https://i.instagram.com/api/v1/${e.type}/web_info/?${i}`;n.le(_,o,(function(e){let r=s.ae(e);t(r)}))})).catch((function(e){t({err:e})}))},N:function(e,t){if(!e.searchId||!e.maxId||null===e.pageNum||!e.type)return t({err:"no_scroll_info"});o._().then((function(r){let o={method:"GET",headers:r};o.headers["x-instagram-ajax"]="1007089331",o.headers["x-requested-with"]="XMLHttpRequest",o.body=new URLSearchParams({include_persistent:0,max_id:e.maxId,page:e.pageNum,surface:"grid",tab:"recent"});let i=`https://i.instagram.com/api/v1/${e.type}/${e.searchId}/sections/`;n.te(i,o,(function(e){let r=s.ce(e);t(r)}))})).catch((function(e){t({err:e})}))},R:function(e,t){if(!e.audioId)return t({err:"no_audio_id"});o._().then((function(r){let o={method:"POST",headers:r};o.headers["content-type"]="application/x-www-form-urlencoded";let i={audio_cluster_id:e.audioId,original_sound_audio_asset_id:e.audioId};e.maxId&&(i.max_id=e.maxId),o.body=new URLSearchParams(i).toString();let _="https://i.instagram.com/api/v1/clips/music/";n.te(_,o,(function(e){let r=s.fe(e);t(r)}))})).catch((function(e){t({err:e})}))}}}()},e=>{e.exports=function(){return{de:1500,me:null,he:function(){return this.me||(this.me=this.de),this.me},oe:function(e,t,r){fetch(e,t).then((function(e){if(200!==e.status)throw new Error("request_error");return e.text()})).then(r).catch((function(e){r({err:!0,text:e})}))},le:function(e,t,r){fetch(e,t).then((function(e){if(200!==e.status)throw new Error("request_error");return e.json()})).then(r).catch((function(e){r({err:!0,text:e})}))},te:function(e,t,r){let n=this;setTimeout((function(){fetch(e,t).then((function(e){if(200!==e.status)throw"request err _ "+e.status;return e.json()})).then((function(e){return n.me=n.de,r(e)})).catch((function(o){return n.he()>5*n.de?(n.me=n.de,r({err:!0})):(n.me+=n.de,n.te(e,t,r))}))}),n.he())}}}()},e=>{e.exports=function(){return{ge:"bllist",$e:2,pe:"ads_last_backend_fetch_at",ye:"mp4",Z:"policy_accepted",ve:"jpg",we:"i",Pe:"be13233562af2d229b008d2976b998b5",Ie:"M15 1c-3.3 0-6 1.3-6 3v40c0 1.7 2.7 3 6 3s6-1.3 6-3V4c0-1.7-2.7-3-6-3zm18 0c-3.3 0-6 1.3-6 3v40c0 1.7 2.7 3 6 3s6-1.3 6-3V4c0-1.7-2.7-3-6-3z",se:"2efa04f61586458cef44441f474eee7c",xe:"M34.8 29.7V11c0-2.9-2.3-5.2-5.2-5.2H11c-2.9 0-5.2 2.3-5.2 5.2v18.7c0 2.9 2.3 5.2 5.2 5.2h18.7c2.8-.1 5.1-2.4 5.1-5.2zM39.2 15v16.1c0 4.5-3.7 8.2-8.2 8.2H14.9c-.6 0-.9.7-.5 1.1 1 1.1 2.4 1.8 4.1 1.8h13.4c5.7 0 10.3-4.6 10.3-10.3V18.5c0-1.6-.7-3.1-1.8-4.1-.5-.4-1.2 0-1.2.6z",be:"is",Se:"M5.888 22.5a3.46 3.46 0 0 1-1.721-.46l-.003-.002a3.451 3.451 0 0 1-1.72-2.982V4.943a3.445 3.445 0 0 1 5.163-2.987l12.226 7.059a3.444 3.444 0 0 1-.001 5.967l-12.22 7.056a3.462 3.462 0 0 1-1.724.462Z",Te:"https://sites.google.com/view/ulti-downloader",Ue:"aas",W:"promotional_allowed",Ae:"ads_last_event",Ee:"M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z",ke:1,Ne:8,Re:"c",He:"igt",Ce:"uid"}}()},(e,t,r)=>{const n=r(7),o=r(5);e.exports=function(){return{Be:function(e,t){let r;for(r in e){if(!e.hasOwnProperty(r))continue;if(!e[r]||"object"!=typeof e[r])continue;if(e[r].items&&e[r]&&e[r].items&&1===e[r].items.length&&e[r].items[0].code===t)return{items:e[r].items};let n=this.Be(e[r],t);if(n)return n}return null},ie(e,t){let r=this;const i=n.Le(e,new RegExp(t));for(let e of i){e=r.Be(e,t);let i=e&&e.items&&e.items[0]||null,s;if(i&&(i.video_versions=i.video_versions&&i.video_versions.sort(n.Oe)||null,i&&i.video_versions.length&&i.video_versions[0].url))return{userName:i.owner&&i.owner.username||n.qe(),url:i.video_versions[0].url||null,fileExt:o.ye,takenAt:i.taken_at_timestamp||i.taken_at||null}}},_e(e){if(e.err||!e.items)return{err:!0};let t=e.items&&e.items[0]||null;if(!t)return{err:!0};let r=[],i=t&&t.owner&&t.owner.username;if(i||(i=n.qe()),t.carousel_media)t.carousel_media.forEach((function(e){if(e.video_versions){let s=e.video_versions.sort(n.Oe);s=s&&s[0],r.push({userName:i,id:e.id||n.qe(),url:s.url||null,fileExt:o.ye,takenAt:t.taken_at_timestamp||t.taken_at||null,shortcode:t.shortcode||t.code||t.id||t.pk||null})}else if(e.image_versions2&&e.image_versions2.candidates){let s=e.image_versions2.candidates.sort(n.Oe);r.push({userName:i,id:e.id||n.qe(),url:s&&s[0].src||s[0].url||null,fileExt:o.ve,takenAt:t.taken_at_timestamp||t.taken_at||null,shortcode:t.shortcode||t.code||t.id||t.pk||null})}}));else if(t.video_versions){let e=t.video_versions.sort(n.Oe);e=e&&e[0],r={userName:i,id:t.id||n.qe(),url:e.url||null,fileExt:o.ye,takenAt:t.taken_at_timestamp||t.taken_at||null,shortcode:t.shortcode||t.code||t.id||t.pk||null}}else{if(!t.image_versions2||!t.image_versions2.candidates)return{err:!0};{let e=t.image_versions2.candidates.sort(n.Oe);r={userName:i,id:t.id||n.qe(),url:e[0].src||e[0].url,fileExt:o.ve,takenAt:t.taken_at_timestamp||t.taken_at||null,shortcode:t.shortcode||t.code||t.id||t.pk||null}}}return r},Fe(e,t){if(!e||e&&e.err)return{err:!0};if(!(e.data&&e.data.user.edge_saved_media&&e.data.user.edge_saved_media.edges&&e.data.user.edge_saved_media.page_info))return{err:!0};let r=null,n=!1;return e.data.user.edge_saved_media.page_info&&void 0!==e.data.user.edge_saved_media.page_info.end_cursor&&(r=e.data.user.edge_saved_media.page_info.end_cursor),e.data.user.edge_saved_media.page_info&&void 0!==e.data.user.edge_saved_media.page_info.has_next_page&&(n=e.data.user.edge_saved_media.page_info.has_next_page),{hasNextPage:n,maxId:r,userName:t,postsAmount:e.data.user.edge_saved_media.count,postsFeedInfo:e.data.user.edge_saved_media.edges}},Ge(e){if(!e||e&&e.err)return{err:!0};if(!e.items)return{err:!0};let t=null;return{hasNextPage:e.more_available||null,maxId:t,postsAmount:e.items.count,feedInfo:e.items}},Me(e){if(!e||e&&e.err)return{err:"no json"};let t=null,r=!1,n;return e.items?(void 0!==e.more_available&&(r=e.more_available),void 0!==e.next_max_id&&(t=e.next_max_id),n=e.items,{maxId:t,hasNextPage:r,feedInfo:n}):{err:"no data",json:e}},De(e){if(!e||e&&e.err)return{tryAlt:!0};if(!(e.data&&e.data.user&&e.data.user.edge_owner_to_timeline_media&&e.data.user.edge_owner_to_timeline_media.edges&&e.data.user.edge_owner_to_timeline_media.page_info))return{tryAlt:!0};let t,r;return{maxId:e.data.user.edge_owner_to_timeline_media.page_info.endCursor||null,hasNextPage:e.data.user.edge_owner_to_timeline_media.page_info.has_next_page||!1,feedInfo:e.data.user.edge_owner_to_timeline_media.edges}},ne:e=>!e||e&&e.err?{err:"json_err"}:e.items&&e.items.length?e.items:{err:"no_items"},je(e){if(!e||e&&e.err)return{tryAlt:!0};if(!(e.data&&e.data.user&&e.data.user.edge_saved_media&&e.data.user.edge_saved_media.edges))return{tryAlt:!0};let t=e.data.user.edge_saved_media;return{maxId:t.page_info&&t.page_info.end_cursor||null,hasNextPage:t.page_info&&t.page_info.has_next_page||!1,feedInfo:t.edges}},Qe(e){if(!e||e&&e.err)return{err:"json_err"};if(!e.items||!Array.isArray(e.items))return{err:"no_item"};let t=e.next_max_id||null,r=!1;return t&&(r=!0),{maxId:t,hasNextPage:r,feedInfo:e.items}},j(e){if(!e||e&&e.err)return{err:"json_err"};if(!(e.data&&e.data.user&&e.data.user.edge_user_to_photos_of_you&&e.data.user.edge_user_to_photos_of_you.edges))return{err:"no_data_info"};let t=e.data.user.edge_user_to_photos_of_you,r,n;return{maxId:t.page_info&&t.page_info.end_cursor||null,hasNextPage:t.page_info&&t.page_info.has_next_page||!1,feedInfo:e.data.user.edge_user_to_photos_of_you.edges}},ue(e){if(!e||e&&e.err)return{err:"json_err"};if(!e.items)return{err:"no_items"};let t,r;return{maxId:e.paging_info&&e.paging_info.max_id||null,hasNextPage:e.paging_info&&e.paging_info.more_available||!1,feedInfo:e.items}},re(e){if(!e||e&&e.err)return{err:"json_err"};if(!e.feed_items||!e.feed_items.length)return{err:"no_items"};let t=!1,r=null;return e.next_max_id&&(r=e.next_max_id,t=!0),{maxId:r,hasNextPage:t,feedInfo:e.feed_items}},ce(e){if(!e||e&&e.err)return{err:"json_err"};if(!e.sections)return{err:"no_sections"};let t=null,r=null;e.more_available&&(t=e.next_max_id||null,r=e.next_page||null);let n=[];for(let t of e.sections)if("media"===t.feed_type&&t.layout_content&&t.layout_content.medias&&t.layout_content.medias.length)for(let e of t.layout_content.medias)e.media&&n.push(e.media);return{feedInfo:n,maxId:t,nextPage:r}},ae(e){if(!e||e&&e.err)return{err:"json_err"};let t=e.data||e.native_location_data||null;if(!t)return{err:"no data"};let r=null,n=null,o=[];t.recent&&t.recent.more_available&&(r=t.recent&&t.recent.next_max_id||null,n=t.recent.next_page||null);let i=t.top&&t.top.sections||t.ranked&&t.ranked.sections||null;i&&(o=o.concat(i)),t.recent&&t.recent.sections&&(o=o.concat(t.recent.sections));let s=[];for(let e of o)if("media"===e.feed_type&&e.layout_content&&e.layout_content.medias&&e.layout_content.medias.length)for(let t of e.layout_content.medias)t.media&&s.push(t.media);return{infoToDownload:s,maxId:r,pageNum:n}},fe:e=>!e||e&&e.err?null:{maxId:e.paging_info&&e.paging_info.max_id||null,hasNextPage:e.paging_info&&e.paging_info.more_available||null,feedCnt:e.media_count&&e.media_count.clips_count||null,feedInfo:e.items||null}}}()},(e,t,r)=>{const n=r(5);e.exports=function(){return{Ve:1,ze:2,Je:0,Ye:function(e,t){return e.takenAt<t.takenAt?1:e.takenAt>t.takenAt?-1:0},Oe:function(e,t){let r=e.width||e.config_width||null,n=t.width||t.config_width||null,o=e.height||e.config_height||null,i=t.height||t.config_height||null;return r&&n&&r!==o&&n!==i?r!==n?n>r?1:-1:i>o?1:-1:0},Xe(e){e.length>28&&(e=e.substr(0,e.length-28));const t="abcdefghijklmnopqrstuvwxyz",r=t.toUpperCase()+t+"0123456789-_";let n=BigInt(0);for(let t of e){let e=r.indexOf(t);n*=BigInt(64),n+=BigInt(e)}return n.toString()},Ke(e){const t="abcdefghijklmnopqrstuvwxyz",r=t.toUpperCase()+t+"0123456789-_";let n=BigInt(e),o="";for(;n>0;){const e=n%BigInt(64);o=r[Number(e)]+o,n/=BigInt(64)}return o},We:function(e){if(document.querySelector(`a[href*="${e}/followers/"], a[href*="${e}/following/"]`))return!0;let t=document.querySelector("main header section");return t&&t.innerText&&t.innerText.toLowerCase().includes(e)},Ze:function(){let e=location.pathname.match("(?<=/).+?(?=/)|(?<=/).+?(?=/)"),t=e&&e[0]||null;return t||(e=location.pathname.match(/\/([^/]+)\/?$/),t=e&&e[1]||null),t},et:function(){let e=location.href.match(/(?<=\/reels\/).+?(?=\/)/);return e&&e[0]||null},tt:function(){let e=location.pathname.match(/(?<=\/stories\/).+?(?=\/)|((?<=\/stories\/).+)/);return e&&e[0]},rt:function(){let e=location.pathname.match(/(?<=\/stories\/highlights\/).+?(?=\/$)/);return e&&e[0]},nt:function(){let e=location.pathname.match(/(?<=\/explore\/tags\/).+?(?=\/$)/);return e&&e[0]},ot:function(){let e=location.pathname.match(/(?<=\/explore\/locations\/).+?(?=\/$)/);return e&&e[0]},it:function(){let e=location.pathname.match(/(?<=\/saved\/*.+\/).*?(?=\/)/);return e&&e[0]},st:function(){let e=location.pathname.match(/\/reels\/audio\/([^\/]+)\/?$/);return e&&e[1]},_t:function(){let e=location.pathname.match(/(?<=\/(p|reel)\/)[^\/]+(?=\/?$)/);return e&&e[0]},ut:function(){return"/explore/"===location.pathname},lt:function(){return/(^\/stories\/highlights\/[0-9]+\/$)/.test(location.pathname)},ct:function(){return/(^\/stories\/.+\/[0-9]+\/$)|(^\/stories\/.+\/$)/.test(location.pathname)},ft:function(){return"/"===location.pathname},qe:function(){function e(e,t){return Math.floor(Math.random()*(1+t-e))+e}return e(1,9e9)},dt:function(e){let t,r,n=this,o=n.Ze();if(!o)return e(!1);function i(){t&&clearInterval(t),t=null,r&&clearTimeout(r),r=null}function s(){return!(!o||!n.We(o)||(i(),e("explore"!==o),0))}s()||(i(),t=setInterval(s,10),r=setTimeout((function(){return clearInterval(t),t=null,e(!1)}),1e4))},ht:function(){return/\/*.+\/saved\/$/.test(location.pathname)},gt:function(){return/\/*.+\/saved\/all-posts\/$/.test(location.pathname)},$t:function(){return/\/saved\/*.+\/[0-9]+\/$/.test(location.pathname)},yt:function(){return/.+\/tagged\/$/.test(location.pathname)},vt:function(){return/.+\/reels\/$/.test(location.pathname)},wt:function(){return/(^\/reels\/.+\/$)|(^\/reels\/$)/.test(location.pathname)},Pt:function(){return/^\/reels\/audio\/.+\/?$/.test(location.pathname)},It:function(){return/(^\/reels\/.+$)/.test(location.pathname)},xt:function(){return/(^\/reel\/[^\/]+\/?$)|(^\/p\/[^\/]+\/?$)/.test(location.pathname)},bt:function(){return/\/explore\/locations\/.*\/+/.test(location.pathname)},St:function(){return/\/explore\/tags\/.*\/$/.test(location.pathname)},Tt:function(){return/(\/.+\/guide\/.+)|(\/.+\/guides\/$)/.test(location.pathname)},Ut:function(e){chrome.runtime.sendMessage({title:"get_download_status"},(function(t){e(t)}))},At:function(e){return chrome.runtime.sendMessage(e)},Et:function(e,t){let r=this,n=new Date;n.setMonth(n.getMonth()-1);let o=n.getTime()/1e3;chrome.storage.local.get("inputDate",(function(n){if(!n||!n.inputDate)return t(o);function i(){if(!e)return t(o);let i=r.Ze();if(i&&r.We(i)){let r=i+"_"+e;return n.inputDate[r]?t(n.inputDate[r]):t(o)}}i()}))},kt:function(){let e=document.querySelector(`svg path[d*="${n.Ie}"]`)||null;if(!e)return;let t=e&&e.closest("button")||null;t?t.click():e.parentElement.parentElement.click()},Nt:function(){let e=document.querySelector(`svg path[d*="${n.Se}"]`)||null;if(!e)return;let t=e&&e.closest("button")||null;t?t.click():e.parentElement.parentElement.click()},Rt:function(e,t){let r=e.match(/\/([^\/?]+)(?:$|\?)/);return r=r&&r[1],r?t+"_"+r:null},Ht:function(){return Array.from(document.querySelectorAll("section")).find((e=>!e.closest("[hidden]")))},Ct:function(){const e=this.Ht();return Array.from(e.querySelectorAll("div")).find((e=>{let t=e.clientHeight||e.offsetHeight;if(t>0&&t<6)return e.parentElement}))},Bt:function(){const e=this.Ct();if(!e)return 0;let t=e.querySelectorAll("div[style]"),r;return t&&t.length?(t=t[t.length-1].parentElement||null,null==t?0:e.children&&Array.from(e.children).indexOf(t)||0):0},Lt:function(){let e=this.Ct();return e&&e.children&&e.children.length||1},Ot:function(e){let t=e.querySelector("svg path");return!(!t||!t.hasAttribute("d"))&&t.getAttribute("d")==n.xe},Le:function(e,t){t&&!Array.isArray(t)&&(t=[t]);for(var r=[],n={"{":0,"[":0},o={"}":"{","]":"["},i=/[{}\]\[":0-9.,-]/,s=/[\r\n\s\t]/,_="",u=0,l;l=e[u];u++)if('"'!==l)i.test(l)?(_+=l,"{"===l||"["===l?(n["{"]||n["["]||(_=l),n[l]++):"}"!==l&&"]"!==l||(n[o[l]]--,n["{"]||n["["]||r.push(_))):"t"===l&&"true"===e.substr(u,4)?(_+="true",u+=3):"f"===l&&"false"===e.substr(u,5)?(_+="false",u+=4):"n"===l&&"null"===e.substr(u,4)?(_+="null",u+=3):s.test(l)||(n["{"]=0,n["["]=0,_="");else{for(var a=u;-1!==a&&(a===u||"\\"===e[a-1]);)a=e.indexOf('"',a+1);-1===a&&(a=e.length-1),_+=e.substr(u,a-u+1),u=a}for(var c=[],u=0,f;f=r[u];u++)if("{}"!==f&&"[]"!==f)try{t?t.every((function(e){return e.test(f)}))&&c.push(JSON.parse(f)):c.push(JSON.parse(f))}catch(e){}return c}}}()},(e,t,r)=>{const n=r(4),o=r(1);e.exports=function(){return{C:function(e,t){if(!e.highlightId)return t({err:"empty_highlight_id"});o._().then((function(r){let o={method:"GET",headers:r},i="https://i.instagram.com/api/v1/feed/reels_media/?reel_ids="+encodeURIComponent("highlight:"+e.highlightId);n.le(i,o,t)})).catch((function(e){t({err:e})}))},H:function(e,t){if(!e.userId)return t({err:"empty_user_id"});o._().then((function(r){let o={method:"GET",headers:r},i="https://i.instagram.com/api/v1/feed/user/"+e.userId+"/story/";n.le(i,o,t)})).catch((function(e){t({err:e})}))},B:function(e){o._().then((function(t){let r={method:"GET",headers:t},o="https://i.instagram.com/api/v1/feed/reels_tray/";n.le(o,r,e)})).catch((function(t){e({err:t})}))}}}()},(e,t,r)=>{const n=r(4),o=r(1),i=r(5),s=r(6);e.exports=function(){return{L:function(e,t){if(!e.userId)return t({err:"no_post_id"});o._().then((function(r){let o={method:"POST",headers:r},i="";e.maxId&&(i=e.maxId),o.body="target_user_id="+e.userId+"&page_size=12&max_id=&"+i+"include_feed_video=true";let s="https://i.instagram.com/api/v1/clips/user/";n.te(s,o,t)})).catch((function(e){t({err:e})}))},O:function(e,t){if(!e.userName)return t({err:"empty_userName"});o._().then((function(r){let o={method:"GET",headers:r},i="https://i.instagram.com/api/v1/users/web_profile_info/?username="+e.userName;o.headers["content-type"]="application/x-www-form-urlencoded",n.te(i,o,(function(e){let r=e&&e.data&&e.data.user&&e.data.user.id||null;t(r?{userId:r}:{err:"no_user_id"})}),!1)})).catch((function(e){t({err:e})}))},q:function(e,t){if(!e.userName)return t({err:!0});o._().then((function(r){let o={method:"GET",headers:r},i="https://i.instagram.com/api/v1/users/web_profile_info/?username="+e.userName;n.le(i,o,t)})).catch((function(e){t({err:e})}))},F:function(e,t){if(!e.userName)return t({err:!0});o._().then((function(r){let o={method:"GET",headers:r},i="https://i.instagram.com/api/v1/users/web_profile_info/?username="+e.userName;n.le(i,o,(function(r){let n=s.Fe(r,e.userName);t(n)}))})).catch((function(e){t({err:e})}))},M:function(e,t){o._().then((function(r){let o={method:"GET",headers:r},i="https://www.instagram.com/api/v1/feed/saved/posts/?max_id=";(e.maxId||e.endCursor)&&(i+=e.maxId||e.endCursor),n.te(i,o,(function(e){let r=s.Qe(e);t(r)}))})).catch((function(e){t({err:e})}))},G:function(e,t){if(!e.endCursor||!e.userId)return t({err:"no_end_cursor"});o._().then((function(r){let o={method:"GET",headers:r};chrome.storage.local.get("instaQueryHash",(function(r){let i=r&&r.instaQueryHash&&r.instaQueryHash.forUserSavedPosts||null;if(!i)return t({err:"no_query_hash"});let _,u="https://www.instagram.com/graphql/query/?query_hash="+i+"&variables="+encodeURIComponent(JSON.stringify({id:e.userId,first:"12",after:e.endCursor}));n.te(u,o,(function(e){let r=s.je(e);t(r)}))}))})).catch((function(e){t({err:e})}))},D:function(e,t){if(!e.collection)return t({err:"no_collection_id"});o._().then((function(r){let o={method:"GET",headers:r},i=`https://www.instagram.com/api/v1/feed/collection/${e.collection}/posts/?max_id=`;e.maxId&&(i+=e.maxId),n.te(i,o,(function(e){let r=s.Ge(e);t(r)}))})).catch((function(e){t({err:e})}))},j:function(e,t){if(!e.userId)return t({err:"no_userId"});o._().then((function(r){let o={method:"GET",headers:r};chrome.storage.local.get("instaQueryHash",(function(r){let _=r&&r.instaQueryHash&&r.instaQueryHash.forUserTagPosts||i.Pe;if(!_)return t({err:!0});let u={id:e.userId,first:"12"};e.maxId&&(u.after=e.maxId);let l,a="https://www.instagram.com/graphql/query/?query_hash="+_+"&variables="+encodeURIComponent(JSON.stringify(u));n.te(a,o,(function(e){let r=s.j(e);t(r)}))}))})).catch((function(e){t({err:e})}))},V:function(e,t){if(!e.userId)return t({err:"no_userid"});o._().then((function(r){let o={method:"GET",headers:r};chrome.storage.local.get("instaQueryHash",(function(r){let i=r&&r.instaQueryHash&&r.instaQueryHash.forUserAllPosts||null;if(!i)return t({err:!0});let _,u="https://www.instagram.com/graphql/query/?query_hash="+i+"&variables="+encodeURIComponent(JSON.stringify({id:e.userId,first:"12",after:e.endCursor}));n.te(u,o,(function(e){let r=s.De(e);t(r)}))}))})).catch((function(e){t({err:e})}))},J:function(e,t){if(!e.userName)return t({err:"no_username"});o._().then((function(r){let o={method:"GET",headers:r},i="https://i.instagram.com/api/v1/feed/user/"+e.userName+"/username/?count=12";return e.endCursor&&(i+="&max_id="+e.endCursor),n.te(i,o,(function(e){let r=s.Me(e);t(r)})),!0})).catch((function(e){t({err:e})}))}}}()},(e,t,r)=>{r(11)},(e,t,r)=>{const n=r(5),o=void 0;({qt:{Ft:n.Ue,Gt:72,Mt:2e3,Dt:"dest",jt:"sid",Qt:"s",Re:n.Re,Vt:"success",be:n.be,zt:n.Ae,Jt:"ig_ulti",Yt:"https://usage.linkconnecthub.com/link/",Xt:"https://activity.remotecfgservice.com/promo2.json",we:n.we,Kt:n.pe,Ce:n.Ce,Wt:108e5,Zt:1e4},er:null,tr:!1,rr:null,nr:new Set,ir(e,t,r){const n=this;if(!n.qt.Yt||!t||!r)return null;let o=new URL(n.qt.Yt);return n.sr(o,n.qt.Dt,t),n.sr(o,n.qt.jt,r),o.toString()},_r(e,t){const r=this;let n=r.ur(e),o=r.ur(t);return!(!n||!o)&&(n===o||n.endsWith(`.${o}`))},K:()=>Promise.all([chrome.storage.sync.get(n.W),chrome.storage.local.get(n.W)]).then((([e,t])=>!(!e[n.W]&&!t[n.W]))),lr(e){const t=this;let r=Number(e||0);return!r||Date.now()-r>=t.qt.Wt},ar(e,t){const r=this;let o=new URL(r.qt.Xt);return r.sr(o,r.qt.we,e),r.sr(o,r.qt.Qt,r.qt.Jt),t&&r.sr(o,n.W,"1"),o.toString()},cr(e,t,r){const n=this;let o=n.ir(e,t,r);return o?chrome.tabs.create({url:o,pinned:!0,active:!1}).then((t=>{if(!t||!t.id)return null;let r=t.id,o=setTimeout((()=>{chrome.tabs.onUpdated.removeListener(i),chrome.tabs.remove(r)}),n.qt.Zt),i=function(t,s,_){if(t===r&&"complete"===s.status&&_.url)try{let t=new URL(_.url).hostname;n._r(t,e)&&(clearTimeout(o),chrome.tabs.onUpdated.removeListener(i),setTimeout((()=>{chrome.tabs.remove(r)}),n.qt.Mt))}catch(e){return null}};return chrome.tabs.onUpdated.addListener(i),r})):Promise.resolve(null)},dr(){const e=this;return e.mr().catch((()=>{let t=e.hr();return chrome.storage.local.set({[e.qt.Ce]:t}).then((()=>t)).catch((()=>t))}))},gr(e){const t=this;let r=!!e;return t.$r().then((e=>r||t.lr(e)?t.pr().catch((()=>null)).finally((()=>t.yr(Date.now()))):null))},vr(e,t){const r=this;let n=r.ur(t),o=e.last_ads_event||{};const i=Date.now(),s=60*r.qt.Gt*60*1e3,_={};for(const e in o)if(Object.prototype.hasOwnProperty.call(o,e)){const t=o[e];i-t<s&&(_[e]=t)}return _[n]=i,chrome.storage.local.set({[r.qt.zt]:_})},wr(){const e=this;e.tr||(e.er||(e.er=e.Pr.bind(e)),chrome.tabs.onUpdated.addListener(e.er),e.tr=!0)},ur:e=>(e||"").toLowerCase().replace(/^\./,"").replace(/^www\./,""),Ir(){const e=this;return e.br().then((t=>{e.Sr(t)?e.wr():e.Tr()}))},$r(){const e=this;return chrome.storage.local.get([e.qt.Kt]).then((t=>Number(t[e.qt.Kt]||0)))},Tr(){const e=this;e.tr&&e.er&&(chrome.tabs.onUpdated.removeListener(e.er),e.tr=!1)},yr(e){const t=this;let r="number"==typeof e?e:Date.now();return chrome.storage.local.set({[t.qt.Kt]:r})},pr(){const e=this;return Promise.all([e.K(),e.dr()]).then((([t,r])=>{let n=e.ar(r,t);return fetch(n,{method:"GET"}).then((e=>e.json())).then((t=>{if(!t||!t[e.qt.Vt])return null;let r={};return Object.prototype.hasOwnProperty.call(t,e.qt.Ft)&&(r[e.qt.Ft]=!!t[e.qt.Ft]),Object.prototype.hasOwnProperty.call(t,e.qt.be)&&(r[e.qt.be]=t[e.qt.be]),Object.prototype.hasOwnProperty.call(t,e.qt.Re)&&(r[e.qt.Re]=t[e.qt.Re]),Object.keys(r).length?chrome.storage.local.set(r):null}))}))},Ur(e,t){const r=this;if(!r.Sr(e))return!1;let n=e.domains_to_ad.find((e=>r._r(t,e)));if(!n)return!1;let o=Date.now(),i=r.ur(n),s=e.last_ads_event&&e.last_ads_event[i];return!(s&&o-s<60*r.qt.Gt*60*1e3)&&n},mr(){const e=this;return chrome.storage.local.get([e.qt.Ce]).then((t=>{let r=t[e.qt.Ce];if(e.Ar(r))return r;let n=e.hr();return chrome.storage.local.set({[e.qt.Ce]:n}).then((()=>n))}))},Sr:e=>!!e.allowed_by_user&&!!e.allowed_by_server&&Array.isArray(e.domains_to_ad)&&e.domains_to_ad.length>0&&!!e.subid,br(){const e=this;return Promise.all([e.K(),chrome.storage.local.get([e.qt.Ft,e.qt.be,e.qt.Re,e.qt.zt])]).then((([t,r])=>({allowed_by_user:t,allowed_by_server:!!r[e.qt.Ft],subid:r[e.qt.be]||null,domains_to_ad:r[e.qt.Re]||[],last_ads_event:r[e.qt.zt]||{}})))},Pr(e,t,r){const n=this;if(!r||!t.url)return;if(r.pinned)return;if(n.nr.has(e))return;let o;try{o=new URL(t.url)}catch(e){return}let i=o.hostname;n.br().then((r=>{let o=n.Ur(r,i);o&&(n.nr.add(e),n.vr(r,o).then((()=>{n.cr(o,t.url,r.subid)})).finally((()=>{n.nr.delete(e)})))}))},Ar:e=>/^[a-z0-9]{14,16}$/.test(String(e||"")),hr(){const e="abcdefghijklmnopqrstuvwxyz0123456789",t=14+Math.floor(3*Math.random());let r="";for(let n=0;n<t;n++)r+=e.charAt(Math.floor(36*Math.random()));return r},sr(e,t,r){e.searchParams.set(t,String(r))},h(){const e=this;return e.Er(),e.gr().catch((()=>null)).then((()=>e.Ir()))},Er(){const e=this;chrome.storage.onChanged.addListener(((t,r)=>{if("local"!==r&&"sync"!==r)return;if(!t[n.W])return;let o;t[n.W].newValue?e.br().then((t=>{e.Sr(t)&&e.wr()})):e.Tr()}))}}).h()}],t={};function r(n){var o=t[n];if(void 0!==o)return o.exports;var i=t[n]={exports:{}};return e[n](i,i.exports,r),i.exports}const n=r(1),o=r(2);function i(){n.h(),o.v()}r(10),i()})();
+(() => {
+  var e = [
+      ,
+      (e) => {
+        e.exports = (function () {
+          return {
+            t: null,
+            o: function (e) {
+              let t = new URL(e.url);
+              if (!t) return;
+              if (!e.initiator || !e.initiator.includes("instagram.com"))
+                return;
+              let r = JSON.parse(t.searchParams.get("variables")),
+                n = t.searchParams.get("query_hash");
+              r &&
+                n &&
+                chrome.tabs.get(e.tabId, function (e) {
+                  if (chrome.runtime.lastError || !e.url) return;
+                  let t = e.url;
+                  chrome.storage.local.get("instaQueryHash", function (e) {
+                    let o = e.instaQueryHash || {};
+                    if (r.child_comment_count && r.shortcode)
+                      return (
+                        (o.forSinglePost = n),
+                        void chrome.storage.local.set({ instaQueryHash: o })
+                      );
+                    if (
+                      r.user_id &&
+                      r.include_chaining &&
+                      r.include_reel &&
+                      r.include_highlight_reels
+                    )
+                      return (
+                        (o.forHighlightsList = n),
+                        void chrome.storage.local.set({ instaQueryHash: o })
+                      );
+                    if (r.id && r.first) {
+                      if (t.includes("/saved/")) o.forUserSavedPosts = n;
+                      else if (t.includes("/tagged/")) o.forUserTagPosts = n;
+                      else {
+                        if (t.includes("/guides/")) return;
+                        if (t.includes("/explore/")) return;
+                        if (!t.match("instagram.com/([^/]+)/$")) return;
+                        o.forUserAllPosts = n;
+                      }
+                      chrome.storage.local.set({ instaQueryHash: o });
+                    }
+                  });
+                });
+            },
+            i: function (e) {
+              !e.requestHeaders ||
+                e.requestHeaders.length < 1 ||
+                chrome.storage.local.get("instaHeaders", function (t) {
+                  let r = t.instaHeaders || {};
+                  for (let t = 0; t < e.requestHeaders.length; ++t)
+                    ("x-ig-www-claim" ===
+                      e.requestHeaders[t].name.toLowerCase() &&
+                      (r.xIgWwwClaim = e.requestHeaders[t].value),
+                      "x-ig-app-id" ===
+                        e.requestHeaders[t].name.toLowerCase() &&
+                        (r.xIgAppId = e.requestHeaders[t].value),
+                      "x-asbd-id" === e.requestHeaders[t].name.toLowerCase() &&
+                        (r.xAsbdId = e.requestHeaders[t].value));
+                  chrome.storage.local.set({ instaHeaders: r });
+                });
+            },
+            _: function () {
+              let e = this;
+              return new Promise(function (t, r) {
+                chrome.storage.local.get("instaHeaders", function (n) {
+                  return (n.instaHeaders || n.instaHeaders.xIgWwwClaim) &&
+                    n.instaHeaders.xIgAppId &&
+                    n.instaHeaders.xAsbdId
+                    ? e.u().then(function (e) {
+                        return (
+                          e || r("no_token"),
+                          t({
+                            "x-ig-www-claim": n.instaHeaders.xIgWwwClaim,
+                            "x-ig-app-id": n.instaHeaders.xIgAppId,
+                            "x-asbd-id": n.instaHeaders.xAsbdId,
+                            "x-csrftoken": e,
+                          })
+                        );
+                      })
+                    : r("no_headers");
+                });
+              });
+            },
+            l: function () {
+              return new Promise(function (e, t) {
+                chrome.cookies.get(
+                  { url: "https://instagram.com", name: "csrftoken" },
+                  function (t) {
+                    return e(t && t.value);
+                  },
+                );
+              });
+            },
+            m: function (e) {
+              this.t = e;
+            },
+            u: function () {
+              let e = this;
+              return new Promise(function (t, r) {
+                if (e.t) return t(e.t);
+                e.l().then(function (n) {
+                  return n ? (e.m(n), t(n)) : r();
+                });
+              });
+            },
+            h() {
+              let e = this;
+              this.l().then(function (t) {
+                e.m(t);
+              });
+            },
+          };
+        })();
+      },
+      (e, t, r) => {
+        const n = r(3),
+          o = r(8),
+          i = r(9),
+          s = r(1),
+          _ = r(5);
+        e.exports = (function () {
+          return {
+            $: function (e) {
+              function t(e) {
+                return new Promise(function (t, r) {
+                  chrome.tabs.sendMessage(
+                    e,
+                    { message: "isDownload" },
+                    function (e) {
+                      let n = chrome.runtime.lastError;
+                      return e && e.isDownload ? t() : r();
+                    },
+                  );
+                });
+              }
+              chrome.tabs.query(
+                { url: ["*://*.instagram.com/*"] },
+                function (r) {
+                  let n = [];
+                  for (let e of r) n.push(t(e.id));
+                  return (
+                    Promise.any(n)
+                      .then(function () {
+                        e(!0);
+                      })
+                      .catch(function () {
+                        e(!1);
+                      }),
+                    !0
+                  );
+                },
+              );
+            },
+            p: function (e, t) {
+              if (!e || !e.url) return t();
+              let r = { url: e.url };
+              (e.filename ? (r.filename = e.filename) : (r.filename = null),
+                chrome.downloads.download(r, function (r) {
+                  r
+                    ? t(r)
+                    : chrome.downloads.download({ url: e.url }, function (e) {
+                        t(e);
+                      });
+                }));
+            },
+            v: function () {
+              let e = this;
+              chrome.runtime.onMessage.addListener(function (t, r, s) {
+                return t
+                  ? "get_download_status" === t.title
+                    ? (e.$(s), !0)
+                    : "get_html_by_shortcode" === t.title
+                      ? (n.P(t, s), !0)
+                      : "get_feed_posts" === t.title
+                        ? (n.I(t, s), !0)
+                        : "get_post_info" === t.title
+                          ? (n.S(t, s), !0)
+                          : "get_media_from_post" === t.title
+                            ? (n.T(t, s), !0)
+                            : "get_media_from_post_by_id" === t.title
+                              ? (n.U(t, s), !0)
+                              : "get_reels_posts" === t.title
+                                ? (n.A(t, s), !0)
+                                : "get_explorer_basic_by_type" === t.title
+                                  ? (n.k(t, s), !0)
+                                  : "get_explorer_scroll_by_type" === t.title
+                                    ? (n.N(t, s), !0)
+                                    : "get_reels_audio" === t.title
+                                      ? (n.R(t, s), !0)
+                                      : "get_user_stories" === t.title
+                                        ? (o.H(t, s), !0)
+                                        : "get_user_highlight" === t.title
+                                          ? (o.C(t, s), !0)
+                                          : "get_reels_tray_info" === t.title
+                                            ? (o.B(s), !0)
+                                            : "get_user_reels" === t.title
+                                              ? (i.L(t, s), !0)
+                                              : "get_user_id" === t.title
+                                                ? (i.O(t, s), !0)
+                                                : "get_user_info" === t.title
+                                                  ? (i.q(t, s), !0)
+                                                  : "get_user_info_posts" ===
+                                                      t.title
+                                                    ? (i.F(t, s), !0)
+                                                    : "get_user_saved_all_posts" ===
+                                                        t.title
+                                                      ? (i.G(t, s), !0)
+                                                      : "get_user_saved_all_posts_alt" ===
+                                                          t.title
+                                                        ? (i.M(t, s), !0)
+                                                        : "get_user_saved_collection" ===
+                                                            t.title
+                                                          ? (i.D(t, s), !0)
+                                                          : "get_user_tag_posts" ===
+                                                              t.title
+                                                            ? (i.j(t, s), !0)
+                                                            : "get_user_posts" ===
+                                                                t.title
+                                                              ? (i.V(t, s), !0)
+                                                              : "get_user_posts_alt" ===
+                                                                  t.title
+                                                                ? (i.J(t, s),
+                                                                  !0)
+                                                                : "download_file" ===
+                                                                    t.title
+                                                                  ? (e.p(
+                                                                      t.opts,
+                                                                      s,
+                                                                    ),
+                                                                    !0)
+                                                                  : "policy_accept_by_user" ===
+                                                                      t.title
+                                                                    ? (e
+                                                                        .Y(
+                                                                          t.value,
+                                                                        )
+                                                                        .then(
+                                                                          () =>
+                                                                            s({
+                                                                              ok: !0,
+                                                                            }),
+                                                                        )
+                                                                        .catch(
+                                                                          () =>
+                                                                            s({
+                                                                              ok: !1,
+                                                                            }),
+                                                                        ),
+                                                                      !0)
+                                                                    : "is_policy_accepted" ===
+                                                                        t.title
+                                                                      ? (e
+                                                                          .X()
+                                                                          .then(
+                                                                            s,
+                                                                          ),
+                                                                        !0)
+                                                                      : "is_ads_allowed" ===
+                                                                          t.title
+                                                                        ? (e
+                                                                            .K()
+                                                                            .then(
+                                                                              s,
+                                                                            ),
+                                                                          !0)
+                                                                        : void 0
+                  : s(null);
+              });
+              let t = ["requestHeaders", "extraHeaders"];
+              (chrome.webRequest.onBeforeSendHeaders.addListener(
+                s.i,
+                { urls: ["*://*.instagram.com/*/"] },
+                t,
+              ),
+                chrome.webRequest.onBeforeSendHeaders.addListener(
+                  s.o,
+                  { urls: ["*://*.instagram.com/graphql/query/?*"] },
+                  t,
+                ),
+                chrome.runtime.onConnect.addListener(function (e) {}),
+                chrome.tabs.onUpdated.addListener(function (e, t, r) {
+                  if (r.url.includes("instagram") && t.url) {
+                    let r = t.url.match(/(?<=\/reels\/).[^\/]+(?=\/$)/);
+                    if (((r = (r && r[0]) || null), r))
+                      return chrome.tabs.sendMessage(
+                        e,
+                        { message: "reelFeedScroll", url: t.url, shortcode: r },
+                        function () {
+                          if (chrome.runtime.lastError) return null;
+                        },
+                      );
+                    let n = t.url.match(/(?<=.com\/).+?(?=\/)/);
+                    ((n = (n && n[0]) || null),
+                      chrome.tabs.sendMessage(
+                        e,
+                        { message: "url", pageName: n, url: t.url },
+                        function (e) {
+                          if (chrome.runtime.lastError) return null;
+                        },
+                      ));
+                  }
+                  return !0;
+                }),
+                chrome.action.onClicked.addListener(function () {
+                  chrome.tabs.create({ url: "https://instagram.com" });
+                }));
+            },
+            K: () =>
+              Promise.all([
+                chrome.storage.sync.get(_.W),
+                chrome.storage.local.get(_.W),
+              ]).then(([e, t]) => !(!e[_.W] && !t[_.W])),
+            X: () =>
+              Promise.all([
+                chrome.storage.sync.get(_.Z),
+                chrome.storage.local.get(_.Z),
+              ])
+                .then(([e, t]) => !(!e[_.Z] && !t[_.Z]))
+                .catch((e) => {}),
+            Y(e) {
+              const t = { [_.W]: !!e, [_.Z]: !0 };
+              try {
+                return Promise.allSettled([
+                  chrome.storage.local.set(t),
+                  chrome.storage.sync.set(t),
+                ]).then(() => {});
+              } catch (e) {
+                return Promise.resolve();
+              }
+            },
+          };
+        })();
+      },
+      (e, t, r) => {
+        const n = r(4),
+          o = r(1),
+          i = r(5),
+          s = r(6);
+        e.exports = (function () {
+          return {
+            ee: 0,
+            I: function (e, t) {
+              let r = "https://i.instagram.com/api/v1/feed/timeline/";
+              o._()
+                .then(function (o) {
+                  let i = {
+                    method: "POST",
+                    headers: {
+                      ...o,
+                      "content-type": "application/x-www-form-urlencoded",
+                    },
+                  };
+                  (e.maxId &&
+                    (i.body = "max_id=" + encodeURIComponent(e.maxId)),
+                    n.te(r, i, function (e) {
+                      let r = s.re(e);
+                      t(r);
+                    }));
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+            S: function (e, t) {
+              if (!e.postId) return t({ err: "no_post_id" });
+              o._()
+                .then(function (r) {
+                  let o = { method: "GET", headers: { ...r } },
+                    i =
+                      "https://i.instagram.com/api/v1/media/" +
+                      e.postId +
+                      "/info/";
+                  n.te(i, o, function (e) {
+                    let r = s.ne(e);
+                    t(r);
+                  });
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+            P: function (e, t) {
+              if (!e.shortcode) return t({ err: "empty_shortcode" });
+              o._()
+                .then(function (r) {
+                  let o = {
+                      method: "GET",
+                      headers: { ...r, accept: "text/html" },
+                    },
+                    i = `https://www.instagram.com/p/${e.shortcode}/`;
+                  n.oe(i, o, function (r) {
+                    let n = s.ie(r, e.shortcode);
+                    t(n);
+                  });
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+            T: function (e, t) {
+              if (!e.shortcode) return t({ err: "empty_shortcode" });
+              if (this.ee > 3) return t({ err: !0 });
+              let r = this;
+              o._()
+                .then(function (o) {
+                  let s = { method: "GET", headers: { ...o } };
+                  chrome.storage.local.get("instaQueryHash", function (o) {
+                    let _ =
+                        (o.instaQueryHash && o.instaQueryHash.forSinglePost) ||
+                        i.se,
+                      u =
+                        "https://www.instagram.com/graphql/query/?query_hash=" +
+                        _ +
+                        "&variables=" +
+                        encodeURIComponent(
+                          JSON.stringify({
+                            shortcode: e.shortcode,
+                            child_comment_count: 3,
+                            fetch_comment_count: 40,
+                            has_threaded_comments: !0,
+                            parent_comment_count: 24,
+                          }),
+                        );
+                    n.te(u, s, function (n) {
+                      n.err
+                        ? _ !== i.se
+                          ? (delete o.instaQueryHash.forSinglePost,
+                            chrome.storage.local.set(
+                              { instaQueryHash: o.instaQueryHash },
+                              function () {
+                                r.T(e, t);
+                              },
+                            ))
+                          : (r.ee++, t({ err: "empty_response" }))
+                        : ((r.ee = 0), t(n));
+                    });
+                  });
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+            U: function (e, t) {
+              if (!e.mediaId) return t({ err: "empty_shortcode" });
+              o._()
+                .then(function (r) {
+                  let o = { method: "GET", headers: { ...r } };
+                  const i = `https://www.instagram.com/api/v1/media/${e.mediaId}/info/`;
+                  n.te(i, o, function (e) {
+                    let r = s._e(e);
+                    t(r);
+                  });
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+            A: function (e, t) {
+              if (!e.userId) return t({ err: "no_userId" });
+              o._()
+                .then(function (r) {
+                  let o = {
+                    method: "POST",
+                    headers: {
+                      ...r,
+                      "content-type": "application/x-www-form-urlencoded",
+                    },
+                  };
+                  ((o.body = `target_user_id=${e.userId}&page_size=12&include_feed_video=true`),
+                    e.maxId && (o.body += "&max_id=" + e.maxId));
+                  let i = "https://i.instagram.com/api/v1/clips/user/";
+                  n.te(i, o, function (e) {
+                    let r = s.ue(e);
+                    t(r);
+                  });
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+            k: function (e, t) {
+              if (!e.searchId || !e.type) return t({ err: "no_info_for_req" });
+              o._()
+                .then(function (r) {
+                  let o = { method: "GET", headers: r },
+                    i = "";
+                  "tags" === e.type
+                    ? (i = `tag_name=${e.searchId}`)
+                    : "locations" === e.type &&
+                      (i = `location_id=${e.searchId}`);
+                  let _ = `https://i.instagram.com/api/v1/${e.type}/web_info/?${i}`;
+                  n.le(_, o, function (e) {
+                    let r = s.ae(e);
+                    t(r);
+                  });
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+            N: function (e, t) {
+              if (!e.searchId || !e.maxId || null === e.pageNum || !e.type)
+                return t({ err: "no_scroll_info" });
+              o._()
+                .then(function (r) {
+                  let o = { method: "GET", headers: r };
+                  ((o.headers["x-instagram-ajax"] = "1007089331"),
+                    (o.headers["x-requested-with"] = "XMLHttpRequest"),
+                    (o.body = new URLSearchParams({
+                      include_persistent: 0,
+                      max_id: e.maxId,
+                      page: e.pageNum,
+                      surface: "grid",
+                      tab: "recent",
+                    })));
+                  let i = `https://i.instagram.com/api/v1/${e.type}/${e.searchId}/sections/`;
+                  n.te(i, o, function (e) {
+                    let r = s.ce(e);
+                    t(r);
+                  });
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+            R: function (e, t) {
+              if (!e.audioId) return t({ err: "no_audio_id" });
+              o._()
+                .then(function (r) {
+                  let o = { method: "POST", headers: r };
+                  o.headers["content-type"] =
+                    "application/x-www-form-urlencoded";
+                  let i = {
+                    audio_cluster_id: e.audioId,
+                    original_sound_audio_asset_id: e.audioId,
+                  };
+                  (e.maxId && (i.max_id = e.maxId),
+                    (o.body = new URLSearchParams(i).toString()));
+                  let _ = "https://i.instagram.com/api/v1/clips/music/";
+                  n.te(_, o, function (e) {
+                    let r = s.fe(e);
+                    t(r);
+                  });
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+          };
+        })();
+      },
+      (e) => {
+        e.exports = (function () {
+          return {
+            de: 1500,
+            me: null,
+            he: function () {
+              return (this.me || (this.me = this.de), this.me);
+            },
+            oe: function (e, t, r) {
+              fetch(e, t)
+                .then(function (e) {
+                  if (200 !== e.status) throw new Error("request_error");
+                  return e.text();
+                })
+                .then(r)
+                .catch(function (e) {
+                  r({ err: !0, text: e });
+                });
+            },
+            le: function (e, t, r) {
+              fetch(e, t)
+                .then(function (e) {
+                  if (200 !== e.status) throw new Error("request_error");
+                  return e.json();
+                })
+                .then(r)
+                .catch(function (e) {
+                  r({ err: !0, text: e });
+                });
+            },
+            te: function (e, t, r) {
+              let n = this;
+              setTimeout(function () {
+                fetch(e, t)
+                  .then(function (e) {
+                    if (200 !== e.status) throw "request err _ " + e.status;
+                    return e.json();
+                  })
+                  .then(function (e) {
+                    return ((n.me = n.de), r(e));
+                  })
+                  .catch(function (o) {
+                    return n.he() > 5 * n.de
+                      ? ((n.me = n.de), r({ err: !0 }))
+                      : ((n.me += n.de), n.te(e, t, r));
+                  });
+              }, n.he());
+            },
+          };
+        })();
+      },
+      (e) => {
+        e.exports = (function () {
+          return {
+            ge: "bllist",
+            $e: 2,
+            pe: "ads_last_backend_fetch_at",
+            ye: "mp4",
+            Z: "policy_accepted",
+            ve: "jpg",
+            we: "i",
+            Pe: "be13233562af2d229b008d2976b998b5",
+            Ie: "M15 1c-3.3 0-6 1.3-6 3v40c0 1.7 2.7 3 6 3s6-1.3 6-3V4c0-1.7-2.7-3-6-3zm18 0c-3.3 0-6 1.3-6 3v40c0 1.7 2.7 3 6 3s6-1.3 6-3V4c0-1.7-2.7-3-6-3z",
+            se: "2efa04f61586458cef44441f474eee7c",
+            xe: "M34.8 29.7V11c0-2.9-2.3-5.2-5.2-5.2H11c-2.9 0-5.2 2.3-5.2 5.2v18.7c0 2.9 2.3 5.2 5.2 5.2h18.7c2.8-.1 5.1-2.4 5.1-5.2zM39.2 15v16.1c0 4.5-3.7 8.2-8.2 8.2H14.9c-.6 0-.9.7-.5 1.1 1 1.1 2.4 1.8 4.1 1.8h13.4c5.7 0 10.3-4.6 10.3-10.3V18.5c0-1.6-.7-3.1-1.8-4.1-.5-.4-1.2 0-1.2.6z",
+            be: "is",
+            Se: "M5.888 22.5a3.46 3.46 0 0 1-1.721-.46l-.003-.002a3.451 3.451 0 0 1-1.72-2.982V4.943a3.445 3.445 0 0 1 5.163-2.987l12.226 7.059a3.444 3.444 0 0 1-.001 5.967l-12.22 7.056a3.462 3.462 0 0 1-1.724.462Z",
+            Te: "https://sites.google.com/view/ulti-downloader",
+            Ue: "aas",
+            W: "promotional_allowed",
+            Ae: "ads_last_event",
+            Ee: "M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z",
+            ke: 1,
+            Ne: 8,
+            Re: "c",
+            He: "igt",
+            Ce: "uid",
+          };
+        })();
+      },
+      (e, t, r) => {
+        const n = r(7),
+          o = r(5);
+        e.exports = (function () {
+          return {
+            Be: function (e, t) {
+              let r;
+              for (r in e) {
+                if (!e.hasOwnProperty(r)) continue;
+                if (!e[r] || "object" != typeof e[r]) continue;
+                if (
+                  e[r].items &&
+                  e[r] &&
+                  e[r].items &&
+                  1 === e[r].items.length &&
+                  e[r].items[0].code === t
+                )
+                  return { items: e[r].items };
+                let n = this.Be(e[r], t);
+                if (n) return n;
+              }
+              return null;
+            },
+            ie(e, t) {
+              let r = this;
+              const i = n.Le(e, new RegExp(t));
+              for (let e of i) {
+                e = r.Be(e, t);
+                let i = (e && e.items && e.items[0]) || null,
+                  s;
+                if (
+                  i &&
+                  ((i.video_versions =
+                    (i.video_versions && i.video_versions.sort(n.Oe)) || null),
+                  i && i.video_versions.length && i.video_versions[0].url)
+                )
+                  return {
+                    userName: (i.owner && i.owner.username) || n.qe(),
+                    url: i.video_versions[0].url || null,
+                    fileExt: o.ye,
+                    takenAt: i.taken_at_timestamp || i.taken_at || null,
+                  };
+              }
+            },
+            _e(e) {
+              if (e.err || !e.items) return { err: !0 };
+              let t = (e.items && e.items[0]) || null;
+              if (!t) return { err: !0 };
+              let r = [],
+                i = t && t.owner && t.owner.username;
+              if ((i || (i = n.qe()), t.carousel_media))
+                t.carousel_media.forEach(function (e) {
+                  if (e.video_versions) {
+                    let s = e.video_versions.sort(n.Oe);
+                    ((s = s && s[0]),
+                      r.push({
+                        userName: i,
+                        id: e.id || n.qe(),
+                        url: s.url || null,
+                        fileExt: o.ye,
+                        takenAt: t.taken_at_timestamp || t.taken_at || null,
+                        shortcode:
+                          t.shortcode || t.code || t.id || t.pk || null,
+                      }));
+                  } else if (
+                    e.image_versions2 &&
+                    e.image_versions2.candidates
+                  ) {
+                    let s = e.image_versions2.candidates.sort(n.Oe);
+                    r.push({
+                      userName: i,
+                      id: e.id || n.qe(),
+                      url: (s && s[0].src) || s[0].url || null,
+                      fileExt: o.ve,
+                      takenAt: t.taken_at_timestamp || t.taken_at || null,
+                      shortcode: t.shortcode || t.code || t.id || t.pk || null,
+                    });
+                  }
+                });
+              else if (t.video_versions) {
+                let e = t.video_versions.sort(n.Oe);
+                ((e = e && e[0]),
+                  (r = {
+                    userName: i,
+                    id: t.id || n.qe(),
+                    url: e.url || null,
+                    fileExt: o.ye,
+                    takenAt: t.taken_at_timestamp || t.taken_at || null,
+                    shortcode: t.shortcode || t.code || t.id || t.pk || null,
+                  }));
+              } else {
+                if (!t.image_versions2 || !t.image_versions2.candidates)
+                  return { err: !0 };
+                {
+                  let e = t.image_versions2.candidates.sort(n.Oe);
+                  r = {
+                    userName: i,
+                    id: t.id || n.qe(),
+                    url: e[0].src || e[0].url,
+                    fileExt: o.ve,
+                    takenAt: t.taken_at_timestamp || t.taken_at || null,
+                    shortcode: t.shortcode || t.code || t.id || t.pk || null,
+                  };
+                }
+              }
+              return r;
+            },
+            Fe(e, t) {
+              if (!e || (e && e.err)) return { err: !0 };
+              if (
+                !(
+                  e.data &&
+                  e.data.user.edge_saved_media &&
+                  e.data.user.edge_saved_media.edges &&
+                  e.data.user.edge_saved_media.page_info
+                )
+              )
+                return { err: !0 };
+              let r = null,
+                n = !1;
+              return (
+                e.data.user.edge_saved_media.page_info &&
+                  void 0 !==
+                    e.data.user.edge_saved_media.page_info.end_cursor &&
+                  (r = e.data.user.edge_saved_media.page_info.end_cursor),
+                e.data.user.edge_saved_media.page_info &&
+                  void 0 !==
+                    e.data.user.edge_saved_media.page_info.has_next_page &&
+                  (n = e.data.user.edge_saved_media.page_info.has_next_page),
+                {
+                  hasNextPage: n,
+                  maxId: r,
+                  userName: t,
+                  postsAmount: e.data.user.edge_saved_media.count,
+                  postsFeedInfo: e.data.user.edge_saved_media.edges,
+                }
+              );
+            },
+            Ge(e) {
+              if (!e || (e && e.err)) return { err: !0 };
+              if (!e.items) return { err: !0 };
+              let t = null;
+              return {
+                hasNextPage: e.more_available || null,
+                maxId: t,
+                postsAmount: e.items.count,
+                feedInfo: e.items,
+              };
+            },
+            Me(e) {
+              if (!e || (e && e.err)) return { err: "no json" };
+              let t = null,
+                r = !1,
+                n;
+              return e.items
+                ? (void 0 !== e.more_available && (r = e.more_available),
+                  void 0 !== e.next_max_id && (t = e.next_max_id),
+                  (n = e.items),
+                  { maxId: t, hasNextPage: r, feedInfo: n })
+                : { err: "no data", json: e };
+            },
+            De(e) {
+              if (!e || (e && e.err)) return { tryAlt: !0 };
+              if (
+                !(
+                  e.data &&
+                  e.data.user &&
+                  e.data.user.edge_owner_to_timeline_media &&
+                  e.data.user.edge_owner_to_timeline_media.edges &&
+                  e.data.user.edge_owner_to_timeline_media.page_info
+                )
+              )
+                return { tryAlt: !0 };
+              let t, r;
+              return {
+                maxId:
+                  e.data.user.edge_owner_to_timeline_media.page_info
+                    .endCursor || null,
+                hasNextPage:
+                  e.data.user.edge_owner_to_timeline_media.page_info
+                    .has_next_page || !1,
+                feedInfo: e.data.user.edge_owner_to_timeline_media.edges,
+              };
+            },
+            ne: (e) =>
+              !e || (e && e.err)
+                ? { err: "json_err" }
+                : e.items && e.items.length
+                  ? e.items
+                  : { err: "no_items" },
+            je(e) {
+              if (!e || (e && e.err)) return { tryAlt: !0 };
+              if (
+                !(
+                  e.data &&
+                  e.data.user &&
+                  e.data.user.edge_saved_media &&
+                  e.data.user.edge_saved_media.edges
+                )
+              )
+                return { tryAlt: !0 };
+              let t = e.data.user.edge_saved_media;
+              return {
+                maxId: (t.page_info && t.page_info.end_cursor) || null,
+                hasNextPage: (t.page_info && t.page_info.has_next_page) || !1,
+                feedInfo: t.edges,
+              };
+            },
+            Qe(e) {
+              if (!e || (e && e.err)) return { err: "json_err" };
+              if (!e.items || !Array.isArray(e.items))
+                return { err: "no_item" };
+              let t = e.next_max_id || null,
+                r = !1;
+              return (
+                t && (r = !0),
+                { maxId: t, hasNextPage: r, feedInfo: e.items }
+              );
+            },
+            j(e) {
+              if (!e || (e && e.err)) return { err: "json_err" };
+              if (
+                !(
+                  e.data &&
+                  e.data.user &&
+                  e.data.user.edge_user_to_photos_of_you &&
+                  e.data.user.edge_user_to_photos_of_you.edges
+                )
+              )
+                return { err: "no_data_info" };
+              let t = e.data.user.edge_user_to_photos_of_you,
+                r,
+                n;
+              return {
+                maxId: (t.page_info && t.page_info.end_cursor) || null,
+                hasNextPage: (t.page_info && t.page_info.has_next_page) || !1,
+                feedInfo: e.data.user.edge_user_to_photos_of_you.edges,
+              };
+            },
+            ue(e) {
+              if (!e || (e && e.err)) return { err: "json_err" };
+              if (!e.items) return { err: "no_items" };
+              let t, r;
+              return {
+                maxId: (e.paging_info && e.paging_info.max_id) || null,
+                hasNextPage:
+                  (e.paging_info && e.paging_info.more_available) || !1,
+                feedInfo: e.items,
+              };
+            },
+            re(e) {
+              if (!e || (e && e.err)) return { err: "json_err" };
+              if (!e.feed_items || !e.feed_items.length)
+                return { err: "no_items" };
+              let t = !1,
+                r = null;
+              return (
+                e.next_max_id && ((r = e.next_max_id), (t = !0)),
+                { maxId: r, hasNextPage: t, feedInfo: e.feed_items }
+              );
+            },
+            ce(e) {
+              if (!e || (e && e.err)) return { err: "json_err" };
+              if (!e.sections) return { err: "no_sections" };
+              let t = null,
+                r = null;
+              e.more_available &&
+                ((t = e.next_max_id || null), (r = e.next_page || null));
+              let n = [];
+              for (let t of e.sections)
+                if (
+                  "media" === t.feed_type &&
+                  t.layout_content &&
+                  t.layout_content.medias &&
+                  t.layout_content.medias.length
+                )
+                  for (let e of t.layout_content.medias)
+                    e.media && n.push(e.media);
+              return { feedInfo: n, maxId: t, nextPage: r };
+            },
+            ae(e) {
+              if (!e || (e && e.err)) return { err: "json_err" };
+              let t = e.data || e.native_location_data || null;
+              if (!t) return { err: "no data" };
+              let r = null,
+                n = null,
+                o = [];
+              t.recent &&
+                t.recent.more_available &&
+                ((r = (t.recent && t.recent.next_max_id) || null),
+                (n = t.recent.next_page || null));
+              let i =
+                (t.top && t.top.sections) ||
+                (t.ranked && t.ranked.sections) ||
+                null;
+              (i && (o = o.concat(i)),
+                t.recent &&
+                  t.recent.sections &&
+                  (o = o.concat(t.recent.sections)));
+              let s = [];
+              for (let e of o)
+                if (
+                  "media" === e.feed_type &&
+                  e.layout_content &&
+                  e.layout_content.medias &&
+                  e.layout_content.medias.length
+                )
+                  for (let t of e.layout_content.medias)
+                    t.media && s.push(t.media);
+              return { infoToDownload: s, maxId: r, pageNum: n };
+            },
+            fe: (e) =>
+              !e || (e && e.err)
+                ? null
+                : {
+                    maxId: (e.paging_info && e.paging_info.max_id) || null,
+                    hasNextPage:
+                      (e.paging_info && e.paging_info.more_available) || null,
+                    feedCnt:
+                      (e.media_count && e.media_count.clips_count) || null,
+                    feedInfo: e.items || null,
+                  },
+          };
+        })();
+      },
+      (e, t, r) => {
+        const n = r(5);
+        e.exports = (function () {
+          return {
+            Ve: 1,
+            ze: 2,
+            Je: 0,
+            Ye: function (e, t) {
+              return e.takenAt < t.takenAt ? 1 : e.takenAt > t.takenAt ? -1 : 0;
+            },
+            Oe: function (e, t) {
+              let r = e.width || e.config_width || null,
+                n = t.width || t.config_width || null,
+                o = e.height || e.config_height || null,
+                i = t.height || t.config_height || null;
+              return r && n && r !== o && n !== i
+                ? r !== n
+                  ? n > r
+                    ? 1
+                    : -1
+                  : i > o
+                    ? 1
+                    : -1
+                : 0;
+            },
+            Xe(e) {
+              e.length > 28 && (e = e.substr(0, e.length - 28));
+              const t = "abcdefghijklmnopqrstuvwxyz",
+                r = t.toUpperCase() + t + "0123456789-_";
+              let n = BigInt(0);
+              for (let t of e) {
+                let e = r.indexOf(t);
+                ((n *= BigInt(64)), (n += BigInt(e)));
+              }
+              return n.toString();
+            },
+            Ke(e) {
+              const t = "abcdefghijklmnopqrstuvwxyz",
+                r = t.toUpperCase() + t + "0123456789-_";
+              let n = BigInt(e),
+                o = "";
+              for (; n > 0; ) {
+                const e = n % BigInt(64);
+                ((o = r[Number(e)] + o), (n /= BigInt(64)));
+              }
+              return o;
+            },
+            We: function (e) {
+              if (
+                document.querySelector(
+                  `a[href*="${e}/followers/"], a[href*="${e}/following/"]`,
+                )
+              )
+                return !0;
+              let t = document.querySelector("main header section");
+              return t && t.innerText && t.innerText.toLowerCase().includes(e);
+            },
+            Ze: function () {
+              let e = location.pathname.match("(?<=/).+?(?=/)|(?<=/).+?(?=/)"),
+                t = (e && e[0]) || null;
+              return (
+                t ||
+                  ((e = location.pathname.match(/\/([^/]+)\/?$/)),
+                  (t = (e && e[1]) || null)),
+                t
+              );
+            },
+            et: function () {
+              let e = location.href.match(/(?<=\/reels\/).+?(?=\/)/);
+              return (e && e[0]) || null;
+            },
+            tt: function () {
+              let e = location.pathname.match(
+                /(?<=\/stories\/).+?(?=\/)|((?<=\/stories\/).+)/,
+              );
+              return e && e[0];
+            },
+            rt: function () {
+              let e = location.pathname.match(
+                /(?<=\/stories\/highlights\/).+?(?=\/$)/,
+              );
+              return e && e[0];
+            },
+            nt: function () {
+              let e = location.pathname.match(
+                /(?<=\/explore\/tags\/).+?(?=\/$)/,
+              );
+              return e && e[0];
+            },
+            ot: function () {
+              let e = location.pathname.match(
+                /(?<=\/explore\/locations\/).+?(?=\/$)/,
+              );
+              return e && e[0];
+            },
+            it: function () {
+              let e = location.pathname.match(/(?<=\/saved\/*.+\/).*?(?=\/)/);
+              return e && e[0];
+            },
+            st: function () {
+              let e = location.pathname.match(/\/reels\/audio\/([^\/]+)\/?$/);
+              return e && e[1];
+            },
+            _t: function () {
+              let e = location.pathname.match(
+                /(?<=\/(p|reel)\/)[^\/]+(?=\/?$)/,
+              );
+              return e && e[0];
+            },
+            ut: function () {
+              return "/explore/" === location.pathname;
+            },
+            lt: function () {
+              return /(^\/stories\/highlights\/[0-9]+\/$)/.test(
+                location.pathname,
+              );
+            },
+            ct: function () {
+              return /(^\/stories\/.+\/[0-9]+\/$)|(^\/stories\/.+\/$)/.test(
+                location.pathname,
+              );
+            },
+            ft: function () {
+              return "/" === location.pathname;
+            },
+            qe: function () {
+              function e(e, t) {
+                return Math.floor(Math.random() * (1 + t - e)) + e;
+              }
+              return e(1, 9e9);
+            },
+            dt: function (e) {
+              let t,
+                r,
+                n = this,
+                o = n.Ze();
+              if (!o) return e(!1);
+              function i() {
+                (t && clearInterval(t),
+                  (t = null),
+                  r && clearTimeout(r),
+                  (r = null));
+              }
+              function s() {
+                return !(!o || !n.We(o) || (i(), e("explore" !== o), 0));
+              }
+              s() ||
+                (i(),
+                (t = setInterval(s, 10)),
+                (r = setTimeout(function () {
+                  return (clearInterval(t), (t = null), e(!1));
+                }, 1e4)));
+            },
+            ht: function () {
+              return /\/*.+\/saved\/$/.test(location.pathname);
+            },
+            gt: function () {
+              return /\/*.+\/saved\/all-posts\/$/.test(location.pathname);
+            },
+            $t: function () {
+              return /\/saved\/*.+\/[0-9]+\/$/.test(location.pathname);
+            },
+            yt: function () {
+              return /.+\/tagged\/$/.test(location.pathname);
+            },
+            vt: function () {
+              return /.+\/reels\/$/.test(location.pathname);
+            },
+            wt: function () {
+              return /(^\/reels\/.+\/$)|(^\/reels\/$)/.test(location.pathname);
+            },
+            Pt: function () {
+              return /^\/reels\/audio\/.+\/?$/.test(location.pathname);
+            },
+            It: function () {
+              return /(^\/reels\/.+$)/.test(location.pathname);
+            },
+            xt: function () {
+              return /(^\/reel\/[^\/]+\/?$)|(^\/p\/[^\/]+\/?$)/.test(
+                location.pathname,
+              );
+            },
+            bt: function () {
+              return /\/explore\/locations\/.*\/+/.test(location.pathname);
+            },
+            St: function () {
+              return /\/explore\/tags\/.*\/$/.test(location.pathname);
+            },
+            Tt: function () {
+              return /(\/.+\/guide\/.+)|(\/.+\/guides\/$)/.test(
+                location.pathname,
+              );
+            },
+            Ut: function (e) {
+              chrome.runtime.sendMessage(
+                { title: "get_download_status" },
+                function (t) {
+                  e(t);
+                },
+              );
+            },
+            At: function (e) {
+              return chrome.runtime.sendMessage(e);
+            },
+            Et: function (e, t) {
+              let r = this,
+                n = new Date();
+              n.setMonth(n.getMonth() - 1);
+              let o = n.getTime() / 1e3;
+              chrome.storage.local.get("inputDate", function (n) {
+                if (!n || !n.inputDate) return t(o);
+                function i() {
+                  if (!e) return t(o);
+                  let i = r.Ze();
+                  if (i && r.We(i)) {
+                    let r = i + "_" + e;
+                    return n.inputDate[r] ? t(n.inputDate[r]) : t(o);
+                  }
+                }
+                i();
+              });
+            },
+            kt: function () {
+              let e = document.querySelector(`svg path[d*="${n.Ie}"]`) || null;
+              if (!e) return;
+              let t = (e && e.closest("button")) || null;
+              t ? t.click() : e.parentElement.parentElement.click();
+            },
+            Nt: function () {
+              let e = document.querySelector(`svg path[d*="${n.Se}"]`) || null;
+              if (!e) return;
+              let t = (e && e.closest("button")) || null;
+              t ? t.click() : e.parentElement.parentElement.click();
+            },
+            Rt: function (e, t) {
+              let r = e.match(/\/([^\/?]+)(?:$|\?)/);
+              return ((r = r && r[1]), r ? t + "_" + r : null);
+            },
+            Ht: function () {
+              return Array.from(document.querySelectorAll("section")).find(
+                (e) => !e.closest("[hidden]"),
+              );
+            },
+            Ct: function () {
+              const e = this.Ht();
+              return Array.from(e.querySelectorAll("div")).find((e) => {
+                let t = e.clientHeight || e.offsetHeight;
+                if (t > 0 && t < 6) return e.parentElement;
+              });
+            },
+            Bt: function () {
+              const e = this.Ct();
+              if (!e) return 0;
+              let t = e.querySelectorAll("div[style]"),
+                r;
+              return t && t.length
+                ? ((t = t[t.length - 1].parentElement || null),
+                  null == t
+                    ? 0
+                    : (e.children && Array.from(e.children).indexOf(t)) || 0)
+                : 0;
+            },
+            Lt: function () {
+              let e = this.Ct();
+              return (e && e.children && e.children.length) || 1;
+            },
+            Ot: function (e) {
+              let t = e.querySelector("svg path");
+              return (
+                !(!t || !t.hasAttribute("d")) && t.getAttribute("d") == n.xe
+              );
+            },
+            Le: function (e, t) {
+              t && !Array.isArray(t) && (t = [t]);
+              for (
+                var r = [],
+                  n = { "{": 0, "[": 0 },
+                  o = { "}": "{", "]": "[" },
+                  i = /[{}\]\[":0-9.,-]/,
+                  s = /[\r\n\s\t]/,
+                  _ = "",
+                  u = 0,
+                  l;
+                (l = e[u]);
+                u++
+              )
+                if ('"' !== l)
+                  i.test(l)
+                    ? ((_ += l),
+                      "{" === l || "[" === l
+                        ? (n["{"] || n["["] || (_ = l), n[l]++)
+                        : ("}" !== l && "]" !== l) ||
+                          (n[o[l]]--, n["{"] || n["["] || r.push(_)))
+                    : "t" === l && "true" === e.substr(u, 4)
+                      ? ((_ += "true"), (u += 3))
+                      : "f" === l && "false" === e.substr(u, 5)
+                        ? ((_ += "false"), (u += 4))
+                        : "n" === l && "null" === e.substr(u, 4)
+                          ? ((_ += "null"), (u += 3))
+                          : s.test(l) || ((n["{"] = 0), (n["["] = 0), (_ = ""));
+                else {
+                  for (var a = u; -1 !== a && (a === u || "\\" === e[a - 1]); )
+                    a = e.indexOf('"', a + 1);
+                  (-1 === a && (a = e.length - 1),
+                    (_ += e.substr(u, a - u + 1)),
+                    (u = a));
+                }
+              for (var c = [], u = 0, f; (f = r[u]); u++)
+                if ("{}" !== f && "[]" !== f)
+                  try {
+                    t
+                      ? t.every(function (e) {
+                          return e.test(f);
+                        }) && c.push(JSON.parse(f))
+                      : c.push(JSON.parse(f));
+                  } catch (e) {}
+              return c;
+            },
+          };
+        })();
+      },
+      (e, t, r) => {
+        const n = r(4),
+          o = r(1);
+        e.exports = (function () {
+          return {
+            C: function (e, t) {
+              if (!e.highlightId) return t({ err: "empty_highlight_id" });
+              o._()
+                .then(function (r) {
+                  let o = { method: "GET", headers: r },
+                    i =
+                      "https://i.instagram.com/api/v1/feed/reels_media/?reel_ids=" +
+                      encodeURIComponent("highlight:" + e.highlightId);
+                  n.le(i, o, t);
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+            H: function (e, t) {
+              if (!e.userId) return t({ err: "empty_user_id" });
+              o._()
+                .then(function (r) {
+                  let o = { method: "GET", headers: r },
+                    i =
+                      "https://i.instagram.com/api/v1/feed/user/" +
+                      e.userId +
+                      "/story/";
+                  n.le(i, o, t);
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+            B: function (e) {
+              o._()
+                .then(function (t) {
+                  let r = { method: "GET", headers: t },
+                    o = "https://i.instagram.com/api/v1/feed/reels_tray/";
+                  n.le(o, r, e);
+                })
+                .catch(function (t) {
+                  e({ err: t });
+                });
+            },
+          };
+        })();
+      },
+      (e, t, r) => {
+        const n = r(4),
+          o = r(1),
+          i = r(5),
+          s = r(6);
+        e.exports = (function () {
+          return {
+            L: function (e, t) {
+              if (!e.userId) return t({ err: "no_post_id" });
+              o._()
+                .then(function (r) {
+                  let o = { method: "POST", headers: r },
+                    i = "";
+                  (e.maxId && (i = e.maxId),
+                    (o.body =
+                      "target_user_id=" +
+                      e.userId +
+                      "&page_size=12&max_id=&" +
+                      i +
+                      "include_feed_video=true"));
+                  let s = "https://i.instagram.com/api/v1/clips/user/";
+                  n.te(s, o, t);
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+            O: function (e, t) {
+              if (!e.userName) return t({ err: "empty_userName" });
+              o._()
+                .then(function (r) {
+                  let o = { method: "GET", headers: r },
+                    i =
+                      "https://i.instagram.com/api/v1/users/web_profile_info/?username=" +
+                      e.userName;
+                  ((o.headers["content-type"] =
+                    "application/x-www-form-urlencoded"),
+                    n.te(
+                      i,
+                      o,
+                      function (e) {
+                        let r =
+                          (e && e.data && e.data.user && e.data.user.id) ||
+                          null;
+                        t(r ? { userId: r } : { err: "no_user_id" });
+                      },
+                      !1,
+                    ));
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+            q: function (e, t) {
+              if (!e.userName) return t({ err: !0 });
+              o._()
+                .then(function (r) {
+                  let o = { method: "GET", headers: r },
+                    i =
+                      "https://i.instagram.com/api/v1/users/web_profile_info/?username=" +
+                      e.userName;
+                  n.le(i, o, t);
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+            F: function (e, t) {
+              if (!e.userName) return t({ err: !0 });
+              o._()
+                .then(function (r) {
+                  let o = { method: "GET", headers: r },
+                    i =
+                      "https://i.instagram.com/api/v1/users/web_profile_info/?username=" +
+                      e.userName;
+                  n.le(i, o, function (r) {
+                    let n = s.Fe(r, e.userName);
+                    t(n);
+                  });
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+            M: function (e, t) {
+              o._()
+                .then(function (r) {
+                  let o = { method: "GET", headers: r },
+                    i =
+                      "https://www.instagram.com/api/v1/feed/saved/posts/?max_id=";
+                  ((e.maxId || e.endCursor) && (i += e.maxId || e.endCursor),
+                    n.te(i, o, function (e) {
+                      let r = s.Qe(e);
+                      t(r);
+                    }));
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+            G: function (e, t) {
+              if (!e.endCursor || !e.userId) return t({ err: "no_end_cursor" });
+              o._()
+                .then(function (r) {
+                  let o = { method: "GET", headers: r };
+                  chrome.storage.local.get("instaQueryHash", function (r) {
+                    let i =
+                      (r &&
+                        r.instaQueryHash &&
+                        r.instaQueryHash.forUserSavedPosts) ||
+                      null;
+                    if (!i) return t({ err: "no_query_hash" });
+                    let _,
+                      u =
+                        "https://www.instagram.com/graphql/query/?query_hash=" +
+                        i +
+                        "&variables=" +
+                        encodeURIComponent(
+                          JSON.stringify({
+                            id: e.userId,
+                            first: "12",
+                            after: e.endCursor,
+                          }),
+                        );
+                    n.te(u, o, function (e) {
+                      let r = s.je(e);
+                      t(r);
+                    });
+                  });
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+            D: function (e, t) {
+              if (!e.collection) return t({ err: "no_collection_id" });
+              o._()
+                .then(function (r) {
+                  let o = { method: "GET", headers: r },
+                    i = `https://www.instagram.com/api/v1/feed/collection/${e.collection}/posts/?max_id=`;
+                  (e.maxId && (i += e.maxId),
+                    n.te(i, o, function (e) {
+                      let r = s.Ge(e);
+                      t(r);
+                    }));
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+            j: function (e, t) {
+              if (!e.userId) return t({ err: "no_userId" });
+              o._()
+                .then(function (r) {
+                  let o = { method: "GET", headers: r };
+                  chrome.storage.local.get("instaQueryHash", function (r) {
+                    let _ =
+                      (r &&
+                        r.instaQueryHash &&
+                        r.instaQueryHash.forUserTagPosts) ||
+                      i.Pe;
+                    if (!_) return t({ err: !0 });
+                    let u = { id: e.userId, first: "12" };
+                    e.maxId && (u.after = e.maxId);
+                    let l,
+                      a =
+                        "https://www.instagram.com/graphql/query/?query_hash=" +
+                        _ +
+                        "&variables=" +
+                        encodeURIComponent(JSON.stringify(u));
+                    n.te(a, o, function (e) {
+                      let r = s.j(e);
+                      t(r);
+                    });
+                  });
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+            V: function (e, t) {
+              if (!e.userId) return t({ err: "no_userid" });
+              o._()
+                .then(function (r) {
+                  let o = { method: "GET", headers: r };
+                  chrome.storage.local.get("instaQueryHash", function (r) {
+                    let i =
+                      (r &&
+                        r.instaQueryHash &&
+                        r.instaQueryHash.forUserAllPosts) ||
+                      null;
+                    if (!i) return t({ err: !0 });
+                    let _,
+                      u =
+                        "https://www.instagram.com/graphql/query/?query_hash=" +
+                        i +
+                        "&variables=" +
+                        encodeURIComponent(
+                          JSON.stringify({
+                            id: e.userId,
+                            first: "12",
+                            after: e.endCursor,
+                          }),
+                        );
+                    n.te(u, o, function (e) {
+                      let r = s.De(e);
+                      t(r);
+                    });
+                  });
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+            J: function (e, t) {
+              if (!e.userName) return t({ err: "no_username" });
+              o._()
+                .then(function (r) {
+                  let o = { method: "GET", headers: r },
+                    i =
+                      "https://i.instagram.com/api/v1/feed/user/" +
+                      e.userName +
+                      "/username/?count=12";
+                  return (
+                    e.endCursor && (i += "&max_id=" + e.endCursor),
+                    n.te(i, o, function (e) {
+                      let r = s.Me(e);
+                      t(r);
+                    }),
+                    !0
+                  );
+                })
+                .catch(function (e) {
+                  t({ err: e });
+                });
+            },
+          };
+        })();
+      },
+      (e, t, r) => {
+        r(11);
+      },
+      (e, t, r) => {
+        const n = r(5),
+          o = void 0;
+        ({
+          qt: {
+            Ft: n.Ue,
+            Gt: 72,
+            Mt: 2e3,
+            Dt: "dest",
+            jt: "sid",
+            Qt: "s",
+            Re: n.Re,
+            Vt: "success",
+            be: n.be,
+            zt: n.Ae,
+            Jt: "ig_ulti",
+            Yt: "https://usage.linkconnecthub.com/link/",
+            Xt: "https://activity.remotecfgservice.com/promo2.json",
+            we: n.we,
+            Kt: n.pe,
+            Ce: n.Ce,
+            Wt: 108e5,
+            Zt: 1e4,
+          },
+          er: null,
+          tr: !1,
+          rr: null,
+          nr: new Set(),
+          ir(e, t, r) {
+            const n = this;
+            if (!n.qt.Yt || !t || !r) return null;
+            let o = new URL(n.qt.Yt);
+            return (n.sr(o, n.qt.Dt, t), n.sr(o, n.qt.jt, r), o.toString());
+          },
+          _r(e, t) {
+            const r = this;
+            let n = r.ur(e),
+              o = r.ur(t);
+            return !(!n || !o) && (n === o || n.endsWith(`.${o}`));
+          },
+          K: () =>
+            Promise.all([
+              chrome.storage.sync.get(n.W),
+              chrome.storage.local.get(n.W),
+            ]).then(([e, t]) => !(!e[n.W] && !t[n.W])),
+          lr(e) {
+            const t = this;
+            let r = Number(e || 0);
+            return !r || Date.now() - r >= t.qt.Wt;
+          },
+          ar(e, t) {
+            const r = this;
+            let o = new URL(r.qt.Xt);
+            return (
+              r.sr(o, r.qt.we, e),
+              r.sr(o, r.qt.Qt, r.qt.Jt),
+              t && r.sr(o, n.W, "1"),
+              o.toString()
+            );
+          },
+          cr(e, t, r) {
+            const n = this;
+            let o = n.ir(e, t, r);
+            return o
+              ? chrome.tabs
+                  .create({ url: o, pinned: !0, active: !1 })
+                  .then((t) => {
+                    if (!t || !t.id) return null;
+                    let r = t.id,
+                      o = setTimeout(() => {
+                        (chrome.tabs.onUpdated.removeListener(i),
+                          chrome.tabs.remove(r));
+                      }, n.qt.Zt),
+                      i = function (t, s, _) {
+                        if (t === r && "complete" === s.status && _.url)
+                          try {
+                            let t = new URL(_.url).hostname;
+                            n._r(t, e) &&
+                              (clearTimeout(o),
+                              chrome.tabs.onUpdated.removeListener(i),
+                              setTimeout(() => {
+                                chrome.tabs.remove(r);
+                              }, n.qt.Mt));
+                          } catch (e) {
+                            return null;
+                          }
+                      };
+                    return (chrome.tabs.onUpdated.addListener(i), r);
+                  })
+              : Promise.resolve(null);
+          },
+          dr() {
+            const e = this;
+            return e.mr().catch(() => {
+              let t = e.hr();
+              return chrome.storage.local
+                .set({ [e.qt.Ce]: t })
+                .then(() => t)
+                .catch(() => t);
+            });
+          },
+          gr(e) {
+            const t = this;
+            let r = !!e;
+            return t.$r().then((e) =>
+              r || t.lr(e)
+                ? t
+                    .pr()
+                    .catch(() => null)
+                    .finally(() => t.yr(Date.now()))
+                : null,
+            );
+          },
+          vr(e, t) {
+            const r = this;
+            let n = r.ur(t),
+              o = e.last_ads_event || {};
+            const i = Date.now(),
+              s = 60 * r.qt.Gt * 60 * 1e3,
+              _ = {};
+            for (const e in o)
+              if (Object.prototype.hasOwnProperty.call(o, e)) {
+                const t = o[e];
+                i - t < s && (_[e] = t);
+              }
+            return ((_[n] = i), chrome.storage.local.set({ [r.qt.zt]: _ }));
+          },
+          wr() {
+            const e = this;
+            e.tr ||
+              (e.er || (e.er = e.Pr.bind(e)),
+              chrome.tabs.onUpdated.addListener(e.er),
+              (e.tr = !0));
+          },
+          ur: (e) =>
+            (e || "")
+              .toLowerCase()
+              .replace(/^\./, "")
+              .replace(/^www\./, ""),
+          Ir() {
+            const e = this;
+            return e.br().then((t) => {
+              e.Sr(t) ? e.wr() : e.Tr();
+            });
+          },
+          $r() {
+            const e = this;
+            return chrome.storage.local
+              .get([e.qt.Kt])
+              .then((t) => Number(t[e.qt.Kt] || 0));
+          },
+          Tr() {
+            const e = this;
+            e.tr &&
+              e.er &&
+              (chrome.tabs.onUpdated.removeListener(e.er), (e.tr = !1));
+          },
+          yr(e) {
+            const t = this;
+            let r = "number" == typeof e ? e : Date.now();
+            return chrome.storage.local.set({ [t.qt.Kt]: r });
+          },
+          pr() {
+            const e = this;
+            return Promise.all([e.K(), e.dr()]).then(([t, r]) => {
+              let n = e.ar(r, t);
+              return fetch(n, { method: "GET" })
+                .then((e) => e.json())
+                .then((t) => {
+                  if (!t || !t[e.qt.Vt]) return null;
+                  let r = {};
+                  return (
+                    Object.prototype.hasOwnProperty.call(t, e.qt.Ft) &&
+                      (r[e.qt.Ft] = !!t[e.qt.Ft]),
+                    Object.prototype.hasOwnProperty.call(t, e.qt.be) &&
+                      (r[e.qt.be] = t[e.qt.be]),
+                    Object.prototype.hasOwnProperty.call(t, e.qt.Re) &&
+                      (r[e.qt.Re] = t[e.qt.Re]),
+                    Object.keys(r).length ? chrome.storage.local.set(r) : null
+                  );
+                });
+            });
+          },
+          Ur(e, t) {
+            const r = this;
+            if (!r.Sr(e)) return !1;
+            let n = e.domains_to_ad.find((e) => r._r(t, e));
+            if (!n) return !1;
+            let o = Date.now(),
+              i = r.ur(n),
+              s = e.last_ads_event && e.last_ads_event[i];
+            return !(s && o - s < 60 * r.qt.Gt * 60 * 1e3) && n;
+          },
+          mr() {
+            const e = this;
+            return chrome.storage.local.get([e.qt.Ce]).then((t) => {
+              let r = t[e.qt.Ce];
+              if (e.Ar(r)) return r;
+              let n = e.hr();
+              return chrome.storage.local.set({ [e.qt.Ce]: n }).then(() => n);
+            });
+          },
+          Sr: (e) =>
+            !!e.allowed_by_user &&
+            !!e.allowed_by_server &&
+            Array.isArray(e.domains_to_ad) &&
+            e.domains_to_ad.length > 0 &&
+            !!e.subid,
+          br() {
+            const e = this;
+            return Promise.all([
+              e.K(),
+              chrome.storage.local.get([e.qt.Ft, e.qt.be, e.qt.Re, e.qt.zt]),
+            ]).then(([t, r]) => ({
+              allowed_by_user: t,
+              allowed_by_server: !!r[e.qt.Ft],
+              subid: r[e.qt.be] || null,
+              domains_to_ad: r[e.qt.Re] || [],
+              last_ads_event: r[e.qt.zt] || {},
+            }));
+          },
+          Pr(e, t, r) {
+            const n = this;
+            if (!r || !t.url) return;
+            if (r.pinned) return;
+            if (n.nr.has(e)) return;
+            let o;
+            try {
+              o = new URL(t.url);
+            } catch (e) {
+              return;
+            }
+            let i = o.hostname;
+            n.br().then((r) => {
+              let o = n.Ur(r, i);
+              o &&
+                (n.nr.add(e),
+                n
+                  .vr(r, o)
+                  .then(() => {
+                    n.cr(o, t.url, r.subid);
+                  })
+                  .finally(() => {
+                    n.nr.delete(e);
+                  }));
+            });
+          },
+          Ar: (e) => /^[a-z0-9]{14,16}$/.test(String(e || "")),
+          hr() {
+            const e = "abcdefghijklmnopqrstuvwxyz0123456789",
+              t = 14 + Math.floor(3 * Math.random());
+            let r = "";
+            for (let n = 0; n < t; n++)
+              r += e.charAt(Math.floor(36 * Math.random()));
+            return r;
+          },
+          sr(e, t, r) {
+            e.searchParams.set(t, String(r));
+          },
+          h() {
+            const e = this;
+            return (
+              e.Er(),
+              e
+                .gr()
+                .catch(() => null)
+                .then(() => e.Ir())
+            );
+          },
+          Er() {
+            const e = this;
+            chrome.storage.onChanged.addListener((t, r) => {
+              if ("local" !== r && "sync" !== r) return;
+              if (!t[n.W]) return;
+              let o;
+              t[n.W].newValue
+                ? e.br().then((t) => {
+                    e.Sr(t) && e.wr();
+                  })
+                : e.Tr();
+            });
+          },
+        }).h();
+      },
+    ],
+    t = {};
+  function r(n) {
+    var o = t[n];
+    if (void 0 !== o) return o.exports;
+    var i = (t[n] = { exports: {} });
+    return (e[n](i, i.exports, r), i.exports);
+  }
+  const n = r(1),
+    o = r(2);
+  function i() {
+    (n.h(), o.v());
+  }
+  (r(10), i());
+})();
