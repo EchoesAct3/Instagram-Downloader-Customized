@@ -392,7 +392,7 @@
                     "_" +
                     d.getDate().toString().padStart(2, "0"))(new Date());
               const i = /[<>:"\/\\|?*,.]+/g;
-              let r = `${chrome.i18n.getMessage("shortBaseFileName")}_${t.userName}_${t.id}_${n}`;
+              let r = `${t.userName}_${n}_${t.id}`;
               ((r = r.replace(i, "_")),
                 (r += `.${t.fileExt}`),
                 (t.filename = r));
@@ -476,7 +476,7 @@
                         )
                           return u({ fail: !0 });
                         let i =
-                          chrome.i18n.getMessage("shortBaseFileName") + "_";
+                          "";
                         ((w = w.replaceAll("/", "_")),
                           (g.includes("user") ||
                             g.includes("highlights") ||
@@ -484,7 +484,7 @@
                             (i += y));
                         const r = /[<>:"\/\\|?*,.]+/g;
                         if (
-                          ((i += `_${g}_${w}`),
+                          ((i += (i ? "_" : "") + `${w}_${g}`),
                           (i = i.replace(r, "_")),
                           (i += ".zip"),
                           e.Lt(chrome.i18n.getMessage("dialogTitleZip")),
